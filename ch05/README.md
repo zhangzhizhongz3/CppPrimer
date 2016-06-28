@@ -47,7 +47,7 @@ int main()
 ```
 
 This rewrite diminishes the readability of the code. The comma operator always guarantees the order and discards the front result.
-But there are no meaning in this example, however, also are incomprehensible.
+But there are no meaning in this example, besides, also are incomprehensible.
 
 ##Exercise 5.4
 >Explain each of the following examples, and correct any problems you detect.
