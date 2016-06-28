@@ -14,7 +14,7 @@ int main()
 
     int grade{0};
     while (cin >> grade) {
-        string lettergrade = grade < 60 ? scores[0] : scores[(grade - 50) / 10];
+        string lettergrade = (grade < 60) ? scores[0] : scores[(grade - 50) / 10];
         lettergrade +=
             (grade == 100 || grade < 60)
                 ? ""
