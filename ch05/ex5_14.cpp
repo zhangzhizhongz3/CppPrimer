@@ -36,4 +36,4 @@ int main()
 // how now now now brown cow cow : the word 'now' occurred 3 times
 // how how now now cow cow : the word 'how' occurred 2 times
 // how how how : the word 'how' occurred 3 times
-// (nothing, enter Ctrl + Z/D, EOF) : no word was repeated.
+// (nothing, enter Ctrl + Z/D, EOF) : no word was repeated
