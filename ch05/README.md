@@ -271,7 +271,7 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
 ##[Exercise 5.17](ex5_17.cpp)
 
 ##Exercise 5.18
->Explain each of the following loops. Correct any problems you detect.
+>Explain each of the following loops. Correct any problem you detect.
 ```cpp
 (a) do { // added bracket.
         int v1, v2;
