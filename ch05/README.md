@@ -307,7 +307,7 @@ begin:
 use `for` to replace `goto`:
 ```cpp
 for (int sz = get_size(); sz <=0; sz = get_size())
-    ; // should not remove.
+    ; // should not remove
 ```
 
 ##[Exercise 5.23](ex5_23.cpp)
