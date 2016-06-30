@@ -266,7 +266,7 @@ while (i != size)
 }
 ```
 
-I prefer `for` to `while` in such cases, because it's terse. More importantly, object i won't pollute the external scope after it goes out of the loop. It's a little bit easier to add new code into the external scope, since it reduces the possibility of naming conflicts .That is, a higher maintainability. Of course, this way makes the code a bit harder to read. ([@Mooophy](https://github.com/Mooophy))
+I prefer `for` to `while` in such cases, because it's terse. More importantly, object i won't pollute the external scope after it goes out of the loop. It's a little bit easier to add new code into the external scope, since it reduces the possibility of naming conflicts .That is, a higher maintainability. Of course, this way makes the code a bit harder to read.
 
 ##[Exercise 5.17](ex5_17.cpp)
 
