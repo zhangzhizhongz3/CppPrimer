@@ -220,7 +220,7 @@ the output should indicate that the word now occurred three times.
 
 
 ##Exercise 5.15
->Explain each of the following loops. Correct any problems you detect.
+>Explain each of the following loops. Correct any problem you detect.
 ```cpp
 (a) for (int ix = 0; ix != sz; ++ix) { /* ... */ }
     if (ix != sz)
