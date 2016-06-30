@@ -273,7 +273,7 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
 ##Exercise 5.18
 >Explain each of the following loops. Correct any problem you detect.
 ```cpp
-(a) do { // added bracket.
+(a) do { // added brackets
         int v1, v2;
         cout << "Please enter two numbers to sum:" ;
         if (cin >> v1 >> v2)
@@ -282,11 +282,11 @@ I prefer `for` to `while` in such cases, because it's terse. More importantly, o
 (b) int ival;
     do {
         // . . .
-    } while (ival = get_response()); // should not declared in this scope.
-(c) int ival = get_response();
+    } while (ival = get_response()); // should not declared in this scope
+(c) int ival
     do {
         ival = get_response();
-    } while (ival); // ival is not declared in this scope.
+    } while (ival); // ival is not declared in this scope
 ```
 
 ##[Exercise 5.19](ex5_19.cpp)
