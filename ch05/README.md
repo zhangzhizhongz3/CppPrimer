@@ -250,7 +250,7 @@ while ( cin >> i )
     // ...
 
 // same as for
-for (int i = 0; cin >> i;)
+for (int i; cin >> i;)
     // ...
 
 // for idiomatic
