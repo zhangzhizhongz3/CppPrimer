@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main(void)
+int main()
 {
     int a, b;
     std::cin >> a >> b;
