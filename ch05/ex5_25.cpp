@@ -5,7 +5,7 @@ using std::cout;
 using std::endl;
 using std::runtime_error;
 
-int main(void)
+int main()
 {
     int a, b;
     cout << "Input two integers: ";
