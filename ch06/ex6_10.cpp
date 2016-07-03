@@ -5,8 +5,6 @@
 //! Test the function by calling it and printing the swapped values.
 //!
 #include <iostream>
-#include <string>
-#include <stdexcept>
 
 void swap(int* lhs, int* rhs)
 {
