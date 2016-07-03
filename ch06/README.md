@@ -62,7 +62,7 @@ T abs(T i)
 // example
 size_t count_add(int n)       // n is a parameter.
 {
-    static size_t ctr = 0;    // ctr is a static variable.
+    static size_t ctr = 0;    // ctr is a local static variable.
     ctr += n;
     return ctr;
 }
