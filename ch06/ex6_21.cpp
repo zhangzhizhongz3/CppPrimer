@@ -9,15 +9,15 @@
 #include <iostream>
 using std::cout;
 
-int LargerOne(const int i, const int* ip)
+int largerOne(const int i, const int* ip)
 {
-    return (i > *ip) ? i : *ip;
+    return ((i > *ip) ? i : *ip);
 }
 
 int main()
 {
     int c = 6;
-    cout << LargerOne(7, &c);
+    cout << largerOne(7, &c);
 
     return 0;
 }
