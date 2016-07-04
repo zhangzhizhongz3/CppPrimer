@@ -17,6 +17,7 @@ int main()
     int i = 42, j = 99;
     auto lft = &i;
     auto rht = &j;
+    std::cout << *lft << " " << *rht << std::endl;
     swap(lft, rht);
     std::cout << *lft << " " << *rht << std::endl;
 
