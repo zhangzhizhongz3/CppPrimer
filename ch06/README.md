@@ -184,7 +184,6 @@ we can pass `const int ia[3]` or `const int ia[255]`, there are no differences. 
 void print10(const int (&ia)[10]) { /*...*/ }
 ```
 
-see more discusses at http://stackoverflow.com/questions/26530659/confused-about-array-parameters
 
 ## [Exercise 6.25 && Exercise 6.26](ex6_25_26.cpp)
 ## [Exercise 6.27](ex6_27.cpp)
