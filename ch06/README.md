@@ -165,7 +165,7 @@ vector<int>::iterator change_val(int, vector<int>::iterator);
 ## Exercise 6.20
 
 If we can use `const`, just use it. If we make a parameter a plain reference when it could be a reference to `const`,
-the reference value maybe changed.
+the reference value may be changed.
 
 ## [Exercise 6.21](ex6_21.cpp)
 ## [Exercise 6.22](ex6_22.cpp)
