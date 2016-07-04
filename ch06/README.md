@@ -131,11 +131,11 @@ casue `c` maybe a temp variable. such as `find_char(s, 'a', occurs)`
 
 ## Exercise 6.16
 ```cpp
-bool is_empty(const string& s) { return s.empty(); }
+bool is_empty(const string &s) { return s.empty(); }
 ```
 
 Since this function doesn't change the argument,"const" shoud be added
-before string&s,otherwise this function is misleading and can't be used
+before string &s,otherwise this function is misleading and can't be used
 with const string or in a const function.
 
 ## [Exercise 6.17](ex6_17.cpp)
