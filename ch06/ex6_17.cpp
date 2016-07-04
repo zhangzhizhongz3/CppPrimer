@@ -15,7 +15,7 @@ bool hasUppercase(const string &str)
 
 void makeLowercase(string &str)
 {
-    for (auto& c : str)
+    for (auto &c : str)
         if (isupper(c)) c = tolower(c);
 }
 
