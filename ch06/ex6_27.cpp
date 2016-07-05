@@ -8,7 +8,7 @@ int sum(std::initializer_list<int> il)
     return sum;
 }
 
-int main(void)
+int main()
 {
     std::cout << sum({1, 2, 3, 4, 5}) << std::endl;
     return 0;
