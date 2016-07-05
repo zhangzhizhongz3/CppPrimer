@@ -245,7 +245,7 @@ I pefer the first one. because it is more simpler to me.
 
 ## Exercise 6.38
 ```cpp
-decltype(arrStr)& arrPtr(int i)
+decltype(odd) &arrPtr(int i)
 {
           return (i % 2) ? odd : even;
 }
