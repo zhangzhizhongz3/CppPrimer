@@ -217,7 +217,7 @@ legal, it gave the values (0 ~ 9) to array `ia`.
 
 When the recursion termination condition becomes `var != 0`, two situations can happen :
 case 1 : If the argument is positive, recursion stops at 0.
-case 2 : if the argument is negative, recursion would never stop. As a result,a stack overflow would occur.
+case 2 : If the argument is negative, recursion would never stop. As a result,a stack overflow would occur.
 
 ## Exercise 6.35
 
