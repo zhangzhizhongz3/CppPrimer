@@ -233,12 +233,12 @@ string (&func(string (&arrStr)[10]))[10];
 
 ```cpp
 using ArrT = string[10];
-ArrT& func1(ArrT& arr);
+ArrT &func1(ArrT &arr);
 
-auto func2(ArrT& arr) -> string(&)[10];
+auto func2(ArrT &arr) -> string (&)[10];
 
 string arrS[10];
-decltype(arrS)& func3(ArrT& arr);
+decltype(arrS) &func3(ArrT &arr);
 ```
 
 I pefer the first one. because it is more simpler to me.
