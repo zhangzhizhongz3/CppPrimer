@@ -271,7 +271,7 @@ decltype(odd) &arrPtr(int i)
 
 (b) legal, and match.
 
-(c) legal, but not match. `wd` whould be setting to '*'.
+(c) legal, but not match. `wd` would be setting to '*'.
 
 ## [Exercise 6.42](ex6_42.cpp)
 ## Exercise 6.43
