@@ -6,8 +6,7 @@
 
 #include <iostream>
 #include <string>
-
-using std::string;
+using namespace std;
 
 inline bool isShorter(const string& s1, const string& s2)
 {
@@ -16,5 +15,5 @@ inline bool isShorter(const string& s1, const string& s2)
 
 int main()
 {
-    std::cout << isShorter("pezy", "mooophy") << std::endl;
+    cout << boolalpha << isShorter("pezy", "mooophy") << endl;
 }
