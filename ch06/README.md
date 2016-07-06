@@ -263,7 +263,7 @@ decltype(odd) &arrPtr(int i)
 
 (a) no error
 
-(b) Missing default argument on parameter 'wd', 'bckgrnd'.
+(b) missing default argument on parameter 'wd', 'bckgrnd'
 
 ## Exercise 6.41
 
