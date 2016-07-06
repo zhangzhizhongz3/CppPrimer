@@ -288,7 +288,7 @@ For example, the function `arrPtr` in [Exercise 6.38](#exercise-638) and `make_p
 
 No.
 
-> A constexpr function is defined like any other function but must meet certain restrictions: The **return type** and **the type of each parameter** in a must be a literal type
+> A constexpr function is defined like any other function but must meet certain restrictions: The **return type** and **the type of each parameter** must be a literal type
 
 But `std::string`(parameter of `isShorter`) is not a literal type.
 
