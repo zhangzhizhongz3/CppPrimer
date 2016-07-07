@@ -17,9 +17,9 @@ void f(int, int)
     cout << "f(int, int)" << endl;
 }
 
-void f(double, double)
+void f(double, double=3.14)
 {
-    cout << "f(double, double)" << endl;
+    cout << "f(double, double=3.14)" << endl;
 }
 
 int main()
