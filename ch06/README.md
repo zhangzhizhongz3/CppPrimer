@@ -309,7 +309,7 @@ candidate function:
 
 viable function:
 >Subset of the candidate functions that could match a given call.
->It have the same number of parameters as arguments to the call,
+>It has the same number of parameters as arguments to the call,
 >and each argument type can be converted to the corresponding parameter type.
 
 ## Exercise 6.50
