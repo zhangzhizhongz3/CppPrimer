@@ -352,8 +352,8 @@ int func(int, int);
 using pFunc1 = decltype(func) *;
 typedef decltype(func) *pFunc2;
 using pFunc3 = int (*)(int, int);
-using pFunc4 = int(int, int);
-typedef int(*pFunc5)(int, int);
+using pFunc4 = int (int, int);
+typedef int (*pFunc5)(int, int);
 using pFunc6 = decltype(func);
 
 vector<pFunc1> vec1;
