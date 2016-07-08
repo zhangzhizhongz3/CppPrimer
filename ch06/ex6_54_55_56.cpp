@@ -19,19 +19,19 @@ using std::endl;
 #include <vector>
 using std::vector;
 
-int add(int a, int b)
+inline int add(const int a, const int b)
 {
     return a + b;
 }
-int subtract(int a, int b)
+inline int subtract(const int a, const int b)
 {
     return a - b;
 }
-int multiply(int a, int b)
+inline int multiply(const int a, const int b)
 {
     return a * b;
 }
-int divide(int a, int b)
+inline int divide(const int a, const int b)
 {
     return b != 0 ? a / b : 0;
 }
