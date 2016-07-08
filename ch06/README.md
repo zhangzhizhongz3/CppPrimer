@@ -333,17 +333,17 @@ viable function:
 
 (a)
 ```cpp
-int calc(int&, int&); // calls calc(int&)
-int calc(const int&, const int&); // calls calc(const int&)
+int calc(int&, int&); // calls calc(int&, int&)
+int calc(const int&, const int&); // calls calc(const int&, const int&)
 ```
 (b)
 ```cpp
-int calc(char*, char*); // calls calc(char*)
-int calc(const char*, const char*); calls calc(const char *)
+int calc(char*, char*); // calls calc(char*, char*)
+int calc(const char*, const char*); calls calc(const char*, const char*)
 ```
 (c)
 
-illegal. both calls calc(char*)
+illegal. both calls calc(char*, char*)
 
 ## Exercise 6.54
 ```cpp
