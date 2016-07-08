@@ -347,13 +347,13 @@ illegal. both calls calc(char *, char *)
 
 ## Exercise 6.54
 ```cpp
-int func(int a, int b);
+int func(int, int);
 
 using pFunc1 = decltype(func) *;
 typedef decltype(func) *pFunc2;
-using pFunc3 = int (*)(int a, int b);
-using pFunc4 = int(int a, int b);
-typedef int(*pFunc5)(int a, int b);
+using pFunc3 = int (*)(int, int);
+using pFunc4 = int(int, int);
+typedef int(*pFunc5)(int, int);
 using pFunc6 = decltype(func);
 
 std::vector<pFunc1> vec1;
