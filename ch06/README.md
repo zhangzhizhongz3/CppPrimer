@@ -343,7 +343,7 @@ int calc(const char*, const char*); calls calc(const char*, const char*)
 ```
 (c)
 
-illegal. both calls calc(char*, char*)
+illegal. both calls calc(char *, char *)
 
 ## Exercise 6.54
 ```cpp
