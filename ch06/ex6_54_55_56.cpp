@@ -1,4 +1,3 @@
-//! @Yue Wang
 //!
 //! Exercise 6.54:
 //! Write a declaration for a function that takes two int
@@ -15,49 +14,33 @@
 //!
 
 #include <iostream>
-#include <string>
+using std::cout;
+using std::endl;
 #include <vector>
 using std::vector;
-using std::cout;
 
-//!
-//! @brief Exercise 6.54
-//! @note  define the function type fp
-//!
-inline int f(const int, const int);
-typedef decltype(f) fp; // fp is just a function type not a function pointer
-
-//!
-//! @brief Exercise 6.55
-//! @note  Store pointers to these functions in the vector
-//!
-inline int NumAdd(const int n1, const int n2)
+int add(int a, int b)
 {
-    return n1 + n2;
+    return a + b;
 }
-inline int NumSub(const int n1, const int n2)
+int subtract(int a, int b)
 {
-    return n1 - n2;
+    return a - b;
 }
-inline int NumMul(const int n1, const int n2)
+int multiply(int a, int b)
 {
-    return n1 * n2;
+    return a * b;
 }
-inline int NumDiv(const int n1, const int n2)
+int divide(int a, int b)
 {
-    return n1 / n2;
+    return b != 0 ? a / b : 0;
 }
 
-vector<fp*> v{NumAdd, NumSub, NumMul, NumDiv};
+vector<int (*)(int, int)> vec{add, subtract, multiply, divide};
 
 int main()
 {
-    //!
-    //! @brief Exercise 6.56
-    //! @note  Call each element in the vector and print their result.
-    //!
-    for (auto it = v.cbegin(); it != v.cend(); ++it)
-        cout << (*it)(2, 2) << std::endl;
+    for (auto f : vec)
+        cout << f(2, 2) << endl;
 
-    return 0;
 }
