@@ -356,12 +356,12 @@ using pFunc4 = int(int, int);
 typedef int(*pFunc5)(int, int);
 using pFunc6 = decltype(func);
 
-std::vector<pFunc1> vec1;
-std::vector<pFunc2> vec2;
-std::vector<pFunc3> vec3;
-std::vector<pFunc4*> vec4;
-std::vector<pFunc5> vec5;
-std::vector<pFunc6*> vec6;
+vector<pFunc1> vec1;
+vector<pFunc2> vec2;
+vector<pFunc3> vec3;
+vector<pFunc4*> vec4;
+vector<pFunc5> vec5;
+vector<pFunc6*> vec6;
 ```
 
 ## Exercise 6.55
