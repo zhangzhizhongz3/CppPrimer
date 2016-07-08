@@ -376,7 +376,7 @@ int divide(int a, int b) { return b != 0 ? a / b : 0; }
 ```cpp
 vector<decltype(func) *> vec{add, subtract, multiply, divide};
 for (auto f : vec)
-          std::cout << f(2, 2) << std::endl;
+          cout << f(2, 2) << endl;
 ```
 
 ----
