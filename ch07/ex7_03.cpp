@@ -10,14 +10,18 @@
 #include <iostream>
 using std::cin;
 using std::cout;
+using std::cerr;
 using std::endl;
 
 int main()
 {
     Sales_data total;
-    if (cin >> total.bookNo >> total.units_sold >> total.revenue) {
+    double price;
+    if (cin >> total.bookNo >> total.units_sold >> price) {
+        total.revenue=total.units_sold*price;
         Sales_data trans;
-        while (cin >> trans.bookNo >> trans.units_sold >> trans.revenue) {
+        while (cin >> trans.bookNo >> trans.units_sold >> price) {
+            trans.revenue=trans.units_sold*price;
             if (total.isbn() == trans.isbn())
                 total.combine(trans);
             else {
@@ -30,7 +34,7 @@ int main()
              << endl;
     }
     else {
-        std::cerr << "No data?!" << std::endl;
+        cerr << "No data?!" << endl;
         return -1;
     }
 
