@@ -44,7 +44,7 @@ std::istream &secondStep = read(firstStep, data2);
 if (secondStep)
 ```
 
-the condition of the `if` statement would read two `Sales_data` object at one time.
+the condition of the `if` statement would read two `Sales_data` objects at one time.
 
 Exercise 7.11 [Header](ex7_11.h)|[CPP](ex7_11.cpp)
 --------------------------------------------------
