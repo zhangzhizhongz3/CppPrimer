@@ -29,7 +29,7 @@ int main()
         print(cout, total) << endl;
     }
     else {
-        cerr << "No data?!" << std::endl;
+        cerr << "No data?!" << endl;
         return -1;
     }
 
