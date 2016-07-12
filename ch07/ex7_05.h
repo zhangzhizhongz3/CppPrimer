@@ -24,7 +24,7 @@ public:
 
 // Should these functions be const?
 
-// Yes, A const following the parameter list indicates that this is a pointer to
+// Yes, a const following the parameter list indicates that this is a pointer to
 // const.
 // These functions my read but not write to the data members of the objects on
 // which it is called.
