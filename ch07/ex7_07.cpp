@@ -7,24 +7,29 @@
 //
 
 #include "ex7_06.h"
+#include <iostream>
+using std::cin;
+using std::cout;
+using std::cerr;
+using std::endl;
 
 int main()
 {
     Sales_data total;
-    if (read(std::cin, total)) {
+    if (read(cin, total)) {
         Sales_data trans;
-        while (read(std::cin, trans)) {
+        while (read(cin, trans)) {
             if (total.isbn() == trans.isbn())
                 total.combine(trans);
             else {
-                print(std::cout, total) << std::endl;
+                print(cout, total) << endl;
                 total = trans;
             }
         }
-        print(std::cout, total) << std::endl;
+        print(cout, total) << endl;
     }
     else {
-        std::cerr << "No data?!" << std::endl;
+        cerr << "No data?!" << std::endl;
         return -1;
     }
 
