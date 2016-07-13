@@ -13,6 +13,9 @@
 #include <iostream>
 
 class Person {
+friend std::istream &read(std::istream&, Person&);
+friend std::ostream &print(std::ostream&, const Person&);    
+
     std::string name;
     std::string address;
     
