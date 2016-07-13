@@ -12,10 +12,10 @@
 #include <string>
 #include <iostream>
 
-class Person;
-std::istream &read(std::istream&, Person&);
-
 class Person {
+friend std::istream &read(std::istream&, Person&);
+friend std::ostream &print(std::ostream&, const Person&);
+    
     std::string name;
     std::string address;
 
