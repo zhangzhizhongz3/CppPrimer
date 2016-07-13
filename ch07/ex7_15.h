@@ -12,22 +12,20 @@
 #include <string>
 #include <iostream>
 
-struct Person;
-std::istream& read(std::istream&, Person&);
+class Person;
+std::istream &read(std::istream&, Person&);
 
-struct Person {
-    Person() = default;
-    Person(const std::string sname, const std::string saddr)
-        : name(sname), address(saddr)
-    {
-    }
-    Person(std::istream& is) { read(is, *this); }
-
-    std::string getName() const { return name; }
-    std::string getAddress() const { return address; }
-
+class Person {
     std::string name;
     std::string address;
+
+public:
+    Person() = default;
+    Person(const std::string &sname, const std::string &saddr) : name(sname), address(saddr) {}
+    Person(std::istream &is) { read(is, *this); }
+
+    const std::string &getName() const { return name; }
+    const std::string &getAddress() const { return address; }
 };
 
 std::istream& read(std::istream& is, Person& person)
