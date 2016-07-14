@@ -121,7 +121,7 @@ Exercise 7.20
 [Exercise 7.22](ex7_22.h)
 -------------------------
 
-Exercise 7.23 [Header](ex7_23.h)|[CPP](ex7_23.cpp)
+Exercise 7.23 [Header](ex7_23.h)
 --------------------------------------------------
 
 [Exercise 7.24](ex7_24.h)
