@@ -1,5 +1,5 @@
 //
-//  ex7_24.cpp
+//  ex7_24.h
 //  Exercise 7.24
 //
 //  Created by pezy on 11/14/14.
