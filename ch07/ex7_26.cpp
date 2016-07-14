@@ -10,7 +10,7 @@
 
 #include "ex7_26.h"
 
-// member functions.
+// member functions
 Sales_data& Sales_data::combine(const Sales_data& rhs)
 {
     units_sold += rhs.units_sold;
