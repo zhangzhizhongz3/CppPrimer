@@ -15,14 +15,14 @@
 #include <iostream>
 
 class Sales_data {
-    friend std::istream& read(std::istream& is, Sales_data& item);
-    friend std::ostream& print(std::ostream& os, const Sales_data& item);
-    friend Sales_data add(const Sales_data& lhs, const Sales_data& rhs);
+    friend std::istream& read(std::istream&, Sales_data&);
+    friend std::ostream& print(std::ostream&, const Sales_data&);
+    friend Sales_data add(const Sales_data&, const Sales_data&);
 
 public:
     Sales_data() = default;
     Sales_data(const std::string& s) : bookNo(s) {}
-    Sales_data(const std::string& s, unsigned n, double p) : bookNo(s), units_sold(n), revenue(n * p) {}
+    Sales_data(const std::string& s, unsigned n, double p) : bookNo(s), units_sold(n), revenue(p * n) {}
     Sales_data(std::istream& is) { read(is, *this); }
 
     std::string isbn() const { return bookNo; };
@@ -31,7 +31,6 @@ public:
 private:
     inline double avg_price() const;
 
-private:
     std::string bookNo;
     unsigned units_sold = 0;
     double revenue = 0.0;
@@ -43,8 +42,8 @@ double Sales_data::avg_price() const
 }
 
 // declarations for nonmember parts of the Sales_data interface.
-std::istream& read(std::istream& is, Sales_data& item);
-std::ostream& print(std::ostream& os, const Sales_data& item);
-Sales_data add(const Sales_data& lhs, const Sales_data& rhs);
+std::istream& read(std::istream&, Sales_data&);
+std::ostream& print(std::ostream&, const Sales_data&);
+Sales_data add(const Sales_data&, const Sales_data&);
 
 #endif
