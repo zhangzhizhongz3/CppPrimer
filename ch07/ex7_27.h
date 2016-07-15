@@ -25,8 +25,8 @@ public:
     inline Screen& set(char);
     inline Screen& set(pos, pos, char);
 
-    const Screen& display(std::ostream& os) const { do_display(os); return *this; }
     Screen& display(std::ostream& os) { do_display(os); return *this; }
+    const Screen& display(std::ostream& os) const { do_display(os); return *this; }
 
 private:
     void do_display(std::ostream& os) const { os << contents; }
