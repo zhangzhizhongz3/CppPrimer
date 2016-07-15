@@ -153,11 +153,11 @@ Exercise 7.29
 -------------
 
 ```sh
-#with '&'
+with '&'
 XXXXXXXXXXXXXXXXXXXX#XXXX
 XXXXXXXXXXXXXXXXXXXX#XXXX
                    ^^^
-# without '&'
+without '&'
 XXXXXXXXXXXXXXXXXXXX#XXXX
 XXXXXXXXXXXXXXXXXXXXXXXXX
                    ^^^
