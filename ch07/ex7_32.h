@@ -55,7 +55,6 @@ private:
 
 void Window_mgr::clear(ScreenIndex i)
 {
-    if (i >= screens.size()) return; // judge for out_of_range.
     Screen& s = screens[i];
     s.contents = std::string(s.height * s.width, ' ');
 }
