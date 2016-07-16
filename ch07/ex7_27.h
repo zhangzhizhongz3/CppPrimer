@@ -10,7 +10,7 @@
 #define CP5_ex7_27_h
 
 #include <string>
-
+#include <iostream>
 class Screen {
 public:
     using pos = std::string::size_type;
