@@ -14,6 +14,9 @@
 #include <string>
 #include <iostream>
 
+class Sales_data;
+std::istream &read(std::istream&, Sales_data&);
+
 class Sales_data {
     friend std::istream& read(std::istream&, Sales_data&);
     friend std::ostream& print(std::ostream&, const Sales_data&);
