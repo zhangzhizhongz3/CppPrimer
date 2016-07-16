@@ -31,29 +31,19 @@ class Screen {
 public:
     using pos = std::string::size_type;
 
-    Screen() = default; // 1
-    Screen(pos ht, pos wd) : height(ht), width(wd), contents(ht * wd, ' ') {} // 2
-    Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c)
-    {
-    } // 3
-
+    Screen() = default;
+    Screen(pos ht, pos wd) : height(ht), width(wd), contents(ht * wd, ' ') {}
+    Screen(pos ht, pos wd, char c) : height(ht), width(wd), contents(ht * wd, c) {}
+    
     char get() const { return contents[cursor]; }
     char get(pos r, pos c) const { return contents[r * width + c]; }
-    inline Screen& move(pos r, pos c);
-    inline Screen& set(char c);
-    inline Screen& set(pos r, pos c, char ch);
+    inline Screen& move(pos, pos);
+    inline Screen& set(char);
+    inline Screen& set(pos, pos, char);
 
-    const Screen& display(std::ostream& os) const
-    {
-        do_display(os);
-        return *this;
-    }
-    Screen& display(std::ostream& os)
-    {
-        do_display(os);
-        return *this;
-    }
-
+    Screen& display(std::ostream& os) { do_display(os); return *this; }
+    const Screen& display(std::ostream& os) const { do_display(os); return *this; }
+    
 private:
     void do_display(std::ostream& os) const { os << contents; }
 
@@ -63,26 +53,26 @@ private:
     std::string contents;
 };
 
-inline void Window_mgr::clear(ScreenIndex i)
+void Window_mgr::clear(ScreenIndex i)
 {
     if (i >= screens.size()) return; // judge for out_of_range.
     Screen& s = screens[i];
     s.contents = std::string(s.height * s.width, ' ');
 }
 
-inline Screen& Screen::move(pos r, pos c)
+Screen& Screen::move(pos r, pos c)
 {
     cursor = r * width + c;
     return *this;
 }
 
-inline Screen& Screen::set(char c)
+Screen& Screen::set(char c)
 {
     contents[cursor] = c;
     return *this;
 }
 
-inline Screen& Screen::set(pos r, pos c, char ch)
+Screen& Screen::set(pos r, pos c, char ch)
 {
     contents[r * width + c] = ch;
     return *this;
