@@ -264,7 +264,7 @@ Exercise 7.36
 
 > In this case, the constructor initializer makes it appear as if `base` is initialized with `i` and then `base` is used to initialize `rem`. However, `base` is initialized first. The effect of this initializer is to initialize `rem` with the undefined value of `base`!
 
-**fixd**
+**fixed**
 
 ```cpp
 struct X {
