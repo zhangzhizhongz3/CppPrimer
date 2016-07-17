@@ -26,9 +26,7 @@ int main()
 
     cout << "\n4. use istream as parameter: " << endl;
     cout << "----------------" << endl;
-    Sales_data s4(std::cin);
-
-    return 0;
+    Sales_data s4(cin);
 }
 
 // print
