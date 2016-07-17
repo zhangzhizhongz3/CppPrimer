@@ -63,8 +63,8 @@ double Sales_data::avg_price() const
 }
 
 // declarations for nonmember parts of the Sales_data interface
-std::istream& read(std::istream& is, Sales_data& item);
-std::ostream& print(std::ostream& os, const Sales_data& item);
-Sales_data add(const Sales_data& lhs, const Sales_data& rhs);
+std::istream& read(std::istream&, Sales_data&);
+std::ostream& print(std::ostream&, const Sales_data&);
+Sales_data add(const Sales_data&, const Sales_data&);
 
 #endif
