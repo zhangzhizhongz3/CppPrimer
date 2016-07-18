@@ -7,6 +7,8 @@
 //
 
 #include "ex7_41.h"
+#include <iostream>
+using std::cin;
 using std::cout;
 using std::endl;
 
@@ -49,6 +51,6 @@ int main()
  *  ----------------
  *  Sales_data(const std::string&, unsigned, double)
  *  Sales_data()
- *  Sales_data(istream &is)
+ *  Sales_data(std::istream&)
  *
  */
