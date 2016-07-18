@@ -376,7 +376,7 @@ Drawbacks:
 Exercise 7.48
 -------------
 
-Both are noting happened.
+Both are the same.
 
 Exercise 7.49
 -------------
