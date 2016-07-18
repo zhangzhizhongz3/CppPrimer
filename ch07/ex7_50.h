@@ -26,8 +26,8 @@ public:
     Person(const std::string &sname, const std::string &saddr) : name(sname), address(saddr) {}
     explicit Person(std::istream& is) { read(is, *this); }
 
-    std::string &getName() const { return name; }
-    std::string &getAddress() const { return address; }
+    const std::string &getName() const { return name; }
+    const std::string &getAddress() const { return address; }
 private:
     std::string name;
     std::string address;
