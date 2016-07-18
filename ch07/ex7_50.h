@@ -1,5 +1,5 @@
 //
-//  ex7_50.cpp
+//  ex7_50.h
 //  Exercise 7.50
 //
 //  Created by pezy on 11/24/14.
