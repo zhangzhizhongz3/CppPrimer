@@ -8,7 +8,7 @@
 //  @See ex7_26.h
 //  @Add 1. use delegating constructors
 //       2. add a statement to the body of each of the constructors that prints
-//       a message whether it is executed.
+//          a message whether it is executed
 
 #ifndef CP5_ex7_41_h
 #define CP5_ex7_41_h
