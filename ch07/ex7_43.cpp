@@ -15,7 +15,7 @@ public:
 
 class C {
 public:
-    C() : def(0) {} // define the constructor of C.
+    C() : def(0) {} // define the default constructor of C
 private:
     NoDefault def;
 };
