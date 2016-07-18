@@ -25,5 +25,4 @@ int main()
     C c;
 
     std::vector<C> vec(10);
-    return 0;
 }
