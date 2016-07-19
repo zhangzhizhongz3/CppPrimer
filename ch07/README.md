@@ -464,9 +464,7 @@ struct Data {
 
 int main()
 {
-    std::cout << std::boolalpha;
-    std::cout << std::is_literal_type<Data>::value << std::endl;
-    // output: false
+    std::cout << std::boolalpha << std::is_literal_type<Data>::value << std::endl; // output: false
 }
 ```
 
