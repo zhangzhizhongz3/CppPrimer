@@ -514,5 +514,5 @@ public:
 // example.C
 #include "example.h"
 constexpr double Example::rate;
-vector<double> Example::vec(Example::vecSize);
+vector<double> Example::vec(vecSize);
 ```
