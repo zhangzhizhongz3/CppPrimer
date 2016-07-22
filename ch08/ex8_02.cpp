@@ -5,7 +5,7 @@
 //  Created by pezy on 11/27/14.
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
-//  @Brief test your function by calling it, passing cin as an argument
+//  @Brief  Test your function by calling it, passing cin as an argument
 
 #include <iostream>
 #include <string>
