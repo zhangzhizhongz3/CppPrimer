@@ -5,22 +5,24 @@
 //  Created by pezy on 11/27/14.
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
-//  @Brief  Test your function by calling it, passing cin as an argument
+//  @Brief test your function by calling it, passing cin as an argument
 
 #include <iostream>
-using std::istream;
+#include <string>
 
-istream& func(istream& is)
+std::istream &func(std::istream &is)
 {
-    std::string buf;
-    while (is >> buf) std::cout << buf << std::endl;
+    std::string s;
+    while(is>>s)
+    {
+        std::cout<<s<<" ";
+    }
     is.clear();
     return is;
 }
 
 int main()
 {
-    istream& is = func(std::cin);
+    std::istream &is = func(std::cin);
     std::cout << is.rdstate() << std::endl;
-    return 0;
 }
