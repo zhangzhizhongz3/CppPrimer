@@ -29,7 +29,7 @@ int main()
 ## Exercise 8.3:
 >What causes the following while to terminate?
 ```cpp
-while (cin >> i) /*  ...    */
+while (cin >> i) /*  ...  */
 ```
 
 putting `cin` in an error state cause to terminate. such as `eofbit`, `failbit` and `badbit`.
