@@ -10,36 +10,38 @@
 //          at a time.
 
 #include <iostream>
+#include <string>
+#include <vector>
 #include <fstream>
 #include <sstream>
-#include <vector>
-#include <string>
-
-using std::vector;
+using std::cout;
+using std::cerr;
+using std::endl;
 using std::string;
+using std::vector;
 using std::ifstream;
 using std::istringstream;
-using std::cout;
-using std::endl;
-using std::cerr;
 
 int main()
 {
-    ifstream ifs("../data/book.txt");
-    if (!ifs) {
-        cerr << "No data?" << endl;
+    string line, word;
+    vector<string>  svec;
+    ifstream input("E:\\zzz.txt");
+    if(input)
+    {
+        while(getline(input, line))
+            svec.push_back(line);
+        for(const auto &s : svec)
+        {
+            istringstream is(s);
+            while(is>>word)
+                cout<<word<<" ";
+            cout<<endl;
+        }
+    }
+    else
+    {
+        cerr<<"No data?!"<<endl;
         return -1;
     }
-
-    vector<string> vecLine;
-    string line;
-    while (getline(ifs, line)) vecLine.push_back(line);
-
-    for (auto& s : vecLine) {
-        istringstream iss(s);
-        string word;
-        while (iss >> word) cout << word << endl;
-    }
-
-    return 0;
 }
