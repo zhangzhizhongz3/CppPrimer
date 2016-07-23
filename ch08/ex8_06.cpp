@@ -5,8 +5,8 @@
 //  Created by pezy on 11/27/14.
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
-//  @Brief  Rewrite the bookstore program from 7.1.1 (p.256) to read its transactions from a file.
-//          Pass the name of the file as an argument to main (6.2.5, p.218).
+//  @Brief  Rewrite the bookstore program from §7.1.1 (p.256) to read its transactions from a file.
+//          Pass the name of the file as an argument to main (§6.2.5, p.218).
 //  @See    ex7_26.h (use the Sales_data)
 //  @Run    give a parameter: "E:\book_sales.txt"
 //  @Output 0-201-70353-X 4 99.96 24.99
