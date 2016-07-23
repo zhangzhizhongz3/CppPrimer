@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  The program in this section defined its istringstream object inside
-//  the outer while loop.
+//          the outer while loop.
 //          What changes would you need to make if record were defined outside
 //          that loop?
 //          Rewrite the program, moving the definition of record outside the
@@ -14,12 +14,14 @@
 //          needed.
 
 #include <iostream>
-#include <sstream>
 #include <string>
 #include <vector>
-using std::vector;
-using std::string;
+#include <sstream>
 using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
+using std::vector;
 using std::istringstream;
 
 struct PersonInfo {
@@ -32,20 +34,22 @@ int main()
     string line, word;
     vector<PersonInfo> people;
     istringstream record;
-    while (getline(cin, line)) {
+    while(getline(cin, line))
+    {
         PersonInfo info;
         record.clear();
         record.str(line);
-        record >> info.name;
-        while (record >> word) info.phones.push_back(word);
+        record>>info.name;
+        while(record>>word)
+            info.phones.push_back(word);
         people.push_back(info);
     }
 
-    for (auto& p : people) {
-        std::cout << p.name << " ";
-        for (auto& s : p.phones) std::cout << s << " ";
-        std::cout << std::endl;
+    for(const auto &p:people)
+    {
+        cout<<p.name<<" ";
+        for(const auto &s:p.phones)
+            cout<<s<<" ";
+        cout<<endl;
     }
-
-    return 0;
 }
