@@ -94,7 +94,7 @@ auto it3 = v1.cbegin(), it4 = v2.cbegin();
 ```
 
 -----
-The question example codes have an error:
+The question example codes have an error(see in edit mode):
 
 error: inconsistent deduction for 'auto': '__gnu_cxx::__normal_iterator<int*, std::vector<int> >' and then '__gnu_cxx::__normal_iterator<const int*, std::vector<int> >'
 
