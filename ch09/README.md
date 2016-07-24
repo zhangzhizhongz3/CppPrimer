@@ -19,7 +19,7 @@ std::list<std::deque<int>> ldi;
 ```
 
 ## Exercise 9.3:
->What are the constraints on the iterators that form iterator ranges?
+>What are the constraints on the iterators that form iterator range?
 
 two iterators, `begin` and `end`:
 - they refer to elements of the same container.
