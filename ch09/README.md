@@ -94,11 +94,8 @@ auto it3 = v1.cbegin(), it4 = v2.cbegin();
 ```
 
 -----
-
-[@shidenggui](https://github.com/shidenggui):
-
-The question example codes have an error in `gcc 4.8`:
->**error**: inconsistent deduction for ‘auto’: ‘__gnu_cxx::__normal_iterator<int*, std::vector<int> >’ and then ‘__gnu_cxx::__normal_iterator<const int*, std::vector<int> >’ auto it1 = v1.begin(), it2 = v2.begin();
+The question example codes have an error:
+error: inconsistent deduction for 'auto': '__gnu_cxx::__normal_iterator<int*, std::vector<int> >' and then '__gnu_cxx::__normal_iterator<const int*, std::vector<int> >'
 
 the correct codes should be:
 ```cpp
