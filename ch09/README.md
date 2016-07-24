@@ -96,7 +96,7 @@ auto it3 = v1.cbegin(), it4 = v2.cbegin();
 -----
 The question example codes have an error:
 
-error: inconsistent deduction for auto: __gnu_cxx::__normal_iterator<int*, std::vector<int>> and then __gnu_cxx::__normal_iterator<const int*, std::vector<int>>
+error: inconsistent deduction for 'auto': '__gnu_cxx::__normal_iterator<int*, std::vector<int> >' and then '__gnu_cxx::__normal_iterator<const int*, std::vector<int> >'
 
 the correct codes should be:
 ```cpp
