@@ -123,9 +123,9 @@ vector<int> vec(other_vec.begin(), other_vec.end()); // same as other_vec
 ```
 
 ## Exercise 9.12:
->Explain the differences between the constructor that takes a container to copy and the constructor that takes two iterators.
+>Explain the differences between the constructor that takes a container to copy and the constructor that takes two iterators to copy.
 
-- The constructor that takes another container as an argument (excepting array) assumes the container type and element type of both containers are identical. It will also copy all the elements of the received container into the new one:
+- The constructor that takes another container as an argument assumes the container type and element type of both containers are identical. It will also copy all the elements of the received container into the new one:
 ```cpp
 list<int> numbers = {1, 2, 3, 4, 5};
 list<int> numbers2(numbers);        // ok, numbers2 has the same elements as numbers
