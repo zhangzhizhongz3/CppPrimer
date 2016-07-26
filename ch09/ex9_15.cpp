@@ -8,12 +8,10 @@
 
 int main()
 {
-    std::vector<int> vec1{1, 2, 3, 4, 5};
-    std::vector<int> vec2{1, 2, 3, 4, 5};
-    std::vector<int> vec3{1, 2, 3, 4};
+    std::vector<int> ivec1{1,2,3,4,5};
+    std::vector<int> ivec2{1,2,3,4,5};
+    std::vector<int> ivec3{1,2,3,4};
 
-    std::cout << std::boolalpha << (vec1 == vec2) << std::endl;
-    std::cout << std::boolalpha << (vec1 == vec3) << std::endl;
-
-    return 0;
+    std::cout<<std::boolalpha<<(ivec1==ivec2)<<std::endl;
+    std::cout<<std::boolalpha<<(ivec1==ivec3)<<std::endl;
 }
