@@ -188,7 +188,7 @@ check [this](ex9_22.cpp).
 >In the first program in this section on page 346, what would
 the values of val, val2, val3, and val4 be if c.size() is 1?
 
-same value that equal to the first element's.
+same value that equals to the first element's.
 
 ## [Exercise 9.24](ex9_24.cpp)
 
