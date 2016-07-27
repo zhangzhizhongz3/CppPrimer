@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-using std::vector;
+using namespace std;
 
 void insertDoubleValue(vector<int> &iv, int some_val)
 {
@@ -19,8 +19,9 @@ void insertDoubleValue(vector<int> &iv, int some_val)
 
 void print(const vector<int> &iv)
 {
-    for (auto i : iv) std::cout << i << " ";
-    std::cout << std::endl;
+    for (auto i : iv)
+        cout << i << " ";
+    cout << endl;
 }
 
 int main()
