@@ -10,22 +10,23 @@
 //  @See    ex9_18.cpp
 
 #include <iostream>
-#include <string>
 #include <list>
+#include <string>
 
-using std::string;
-using std::list;
-using std::cout;
 using std::cin;
+using std::cout;
 using std::endl;
+using std::list;
+using std::string;
 
 int main()
 {
     list<string> input;
-    for (string str; cin >> str; input.push_back(str))
+    for(string str; cin>>str; input.push_back(str))
         ;
-    for (auto iter = input.cbegin(); iter != input.cend(); ++iter)
-        cout << *iter << endl;
-
-    return 0;
+    for(auto iter=input.cbegin(); iter!=input.cend(); ++iter)
+    {
+        cout<<*iter<<" ";
+    }
+    cout<<endl;
 }
