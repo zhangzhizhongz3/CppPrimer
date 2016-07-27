@@ -2,7 +2,7 @@
 #include <vector>
 using std::vector;
 
-void insertDoubleValue(vector<int>& iv, int some_val)
+void insertDoubleValue(vector<int> &iv, int some_val)
 {
     auto cursor = iv.size() / 2;
     auto iter = iv.begin(), mid = iv.begin() + cursor;
@@ -17,7 +17,7 @@ void insertDoubleValue(vector<int>& iv, int some_val)
     }
 }
 
-void print(const vector<int>& iv)
+void print(const vector<int> &iv)
 {
     for (auto i : iv) std::cout << i << " ";
     std::cout << std::endl;
