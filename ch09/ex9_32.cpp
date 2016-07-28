@@ -35,5 +35,7 @@ int main()
             iter = vi.erase(iter);
     }
 
-    for (auto i : vi) cout << i << " ";
+    for (auto i : vi) 
+        cout << i << " ";
+    cout<<endl;
 }
