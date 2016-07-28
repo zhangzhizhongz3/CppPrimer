@@ -228,14 +228,14 @@ vec.resize(100) do? What if we next wrote vec.resize(10)?
 
 ```cpp
 vec.resize(100);    // adds 75 items to the back of vec. These added items are value initialized.
-vec.resize(10);     // erases 90 elements from the back of vec
+vec.resize(10);     // erases 90 elements from the back of vec.
 ```
 
 ## Exercise 9.30:
 >What, if any, restrictions does using the version of resize
 that takes a single argument place on the element type?
 
-If the container holds elements of a class type and resize adds elements
+If the container holds elements of a class type and resize adds elements,
 the element type must have a **default constructor**.
 
 ## Exercise 9.31 [use list](ex9_31_1.cpp) | [use forward_list](ex9_31_2.cpp)
