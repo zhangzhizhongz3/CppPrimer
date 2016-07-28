@@ -18,7 +18,7 @@
 //
 //  @Answer "infinite loop". Casue the `++iter` out of the `while` loop. But
 //          even through add brackets it is still infinite loop.
-//          Fixed following.
+//          Fixed following:
 
 #include <iostream>
 using std::cout;
