@@ -178,7 +178,7 @@ while (iter != mid)
 **Problems:**
 
 1. It's a endless loop. `iter` never equal `mid`.
-2. mid will be invalid after the `insert`.(see [issue 133](https://github.com/Mooophy/Cpp-Primer/issues/133))
+2. mid will be invalid after the `insert`.
 
 **FIXED**:
 
