@@ -5,18 +5,18 @@
 //!
 
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
+
+using namespace std;
 
 int main()
 {
-    std::vector<std::string> v;
-    std::string word;
-
-    while (std::cin >> word) {
-        v.push_back(word);
-        std::cout << v.capacity() << "\n";
+    vector<string> svec;
+    string word;
+    while(cin>>word)
+    {
+        svec.push_back(word);
+        cout<<svec.capacity()<<endl;
     }
-
-    return 0;
 }
