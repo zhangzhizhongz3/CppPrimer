@@ -10,18 +10,12 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
-using std::vector;
-using std::cout;
-using std::endl;
-using std::string;
+using namespace std;
 
 int main()
 {
-    vector<char> vec{'p', 'e', 'z', 'y'};
-    string str(vec.begin(), vec.end());
-
-    cout << str << endl;
-
-    return 0;
+    vector<char> cvec{'z','h','i'};
+    string s(cvec.begin(), cvec.end());
+    
+    cout<<s<<endl;
 }
