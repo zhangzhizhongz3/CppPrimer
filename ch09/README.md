@@ -292,7 +292,7 @@ read | size | capacity
 ## Exercise 9.42:
 >Given that you want to read a character at a time into a string, and you know that you need to read at least 100 characters, how might you improve the performance of your program?
 
-Use member `reserve(120)` to allocate enough space for this string. (@Mooophy)
+Use `reserve(120)` to allocate enough space for this string.
 
 ## [Exercise 9.43](ex9_43.cpp)
 ## [Exercise 9.44](ex9_44.cpp)
