@@ -12,6 +12,7 @@
 //
 
 #include <iostream>
+#include <iterator>
 #include <list>
 
 using std::cout;
