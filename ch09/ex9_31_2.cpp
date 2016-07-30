@@ -14,6 +14,7 @@
 //                  4. added iterator prev, and edit some detail
 
 #include <iostream>
+#include <iterator>
 #include <forward_list>
 
 using std::cout;
