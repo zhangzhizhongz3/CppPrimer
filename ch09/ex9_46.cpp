@@ -6,27 +6,24 @@
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief  Rewrite the previous exercise using a position and length to manage
-//  the strings.
-//          This time use only the insert function.
+//  the strings. This time use only the insert function.
 //  @See    9.45
 
 #include <iostream>
 #include <string>
+using std::cout;
+using std::endl;
+using std::string;
 
-std::string pre_suffix(const std::string& name, const std::string& pre,
-                       const std::string& su)
+string &pre_suffix(string &name, const string &pre, const string &suf)
 {
-    std::string ret(name);
-    ret.insert(0, pre);
-    ret.insert(ret.size(), su);
-
-    return ret;
+    name.insert(0, pre);
+    name.insert(name.size(), suf);
+    return name;
 }
 
 int main()
 {
-    std::string name("alan");
-    std::cout << pre_suffix(name, "Mr.", ",Jr.");
-
-    return 0;
+    string name("zhang");
+    cout << pre_suffix(name, "Mr.", "Jr.") << endl;
 }
