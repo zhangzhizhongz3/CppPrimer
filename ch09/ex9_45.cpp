@@ -11,25 +11,19 @@
 
 #include <iostream>
 #include <string>
+using std::cout;
+using std::endl;
+using std::string;
 
-//! Exercise 9.45
-std::string pre_suffix(const std::string& name, const std::string& pre,
-                       const std::string& su);
+string &pre_suffix(string &name, const string &pre, const string &suf)
+{
+    name.insert(name.begin(), pre.begin(), pre.end());
+    name.append(suf);
+    return name;
+}
 
 int main()
 {
-    std::string name("alan");
-    std::cout << pre_suffix(name, "Mr.", ",Jr.") << std::endl;
-
-    return 0;
-}
-
-inline std::string pre_suffix(const std::string& name, const std::string& pre,
-                              const std::string& su)
-{
-    auto ret = name;
-    ret.insert(ret.begin(), pre.begin(), pre.end());
-    ret.append(su);
-
-    return ret;
+    string name("zhang");
+    cout << pre_suffix(name, "Mr.", "Jr.") << endl;
 }
