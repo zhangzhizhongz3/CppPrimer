@@ -37,28 +37,28 @@ void Replace(string &s, const string &oldVal, const string &newVal)
 int main()
 {
         {
-            string str{"To drive straight thru is a foolish, tho courageous act."};
+            string str("To drive straight thru is a foolish, tho courageous act.");
             Replace(str, "thru", "through");
             Replace(str, "tho", "though");
             cout << str << endl;
         }
 
         {
-            string str{"To drive straight thruthru is a foolish, thotho courageous act."};
+            string str("To drive straight thruthru is a foolish, thotho courageous act.");
             Replace(str, "thru", "through");
             Replace(str, "tho", "though");
             cout << str << endl;
         }
 
         {
-            string str{"To drive straight thru is a foolish, tho courageous act."};
+            string str("To drive straight thru is a foolish, tho courageous act.");
             Replace(str, "thru", "thruthru");
             Replace(str, "tho", "though");
             cout << str << endl;
         }
 
         {
-            string str{"my world is a big world"};
+            string str("my world is a big world");
             Replace(str, "world", "worldddddddddddddddddddddddddddddddddddddddddddddddd");
             cout << str << endl;
         }
