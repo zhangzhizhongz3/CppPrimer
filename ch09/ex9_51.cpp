@@ -9,11 +9,11 @@
 
 #include <iostream>
 #include <string>
-#include <vector>
+using namespace std;
 
-class wy_Date {
+class Date {
 public:
-    wy_Date(const std::string& s);
+    Date(const string &s);
     unsigned year;
     unsigned month;
     unsigned day;
@@ -21,54 +21,53 @@ public:
 
 int main()
 {
-    wy_Date d("99/21/3871");
+    Date d("1/1/1900");
 
-    std::cout << d.day << " " << d.month << " " << d.year << " ";
-
-    return 0;
+    cout<<d.day<<" "<<d.month<<" "<<d.year<<endl;
 }
 
-wy_Date::wy_Date(const std::string& s)
+Date::Date(const string &s)
 {
-    unsigned format = 0;
+    unsigned format=0;
 
     //! 1/1/1900
-    if (s.find_first_of("/") != std::string::npos) format = 0x10;
+    if(s.find_first_of("/")!=string::npos)
+        format=0x10;
 
-    //! Jan 1, 1900
-    if (s.find_first_of(",") >= 4 && s.find_first_of(",") != std::string::npos)
-        format = 0x01;
+    //! January 1, 1900 or Jan 1, 1900
+    if(s.find_first_of(",")!=string::npos&&s.find_first_of(",")>=5)
+        format=0x01;
 
-    switch (format) {
-
-    //! format = 1/1/1900
+    switch(format) {
+    //! format=1/1/1990
     case 0x10:
-        day = std::stoi(s.substr(0, s.find_first_of("/")));
-        month = std::stoi(s.substr(s.find_first_of("/") + 1,
-                                   s.find_first_of("/") - s.find_last_of("/")));
-        year = std::stoi(s.substr(s.find_last_of("/") + 1, 4));
+        day=stoi(s.substr(0, s.find_first_of("/")));
+
+        month=stoi(s.substr(s.find_first_of("/")+1, s.find_last_of("/")-s.find_first_of("/")-1));
+
+        year=stoi(s.substr(s.find_last_of("/")+1, 4));
+
         break;
 
-    //! format = January 1, 1900  or Jan 1, 1900
+    //! format=January 1, 1900 or Jan 1, 1900
     case 0x01:
-        day = std::stoi(
-            s.substr(s.find_first_of("1234567890"),
-                     s.find_first_of(",") - s.find_first_of("1234567890")));
+        day=stoi(s.substr(s.find_first_of("1234567890"), s.find_first_of(",")-s.find_first_of("1234567890")));
 
-        if (s.find("Jan") < s.size()) month = 1;
-        if (s.find("Feb") < s.size()) month = 2;
-        if (s.find("Mar") < s.size()) month = 3;
-        if (s.find("Apr") < s.size()) month = 4;
-        if (s.find("May") < s.size()) month = 5;
-        if (s.find("Jun") < s.size()) month = 6;
-        if (s.find("Jul") < s.size()) month = 7;
-        if (s.find("Aug") < s.size()) month = 8;
-        if (s.find("Sep") < s.size()) month = 9;
-        if (s.find("Oct") < s.size()) month = 10;
-        if (s.find("Nov") < s.size()) month = 11;
-        if (s.find("Dec") < s.size()) month = 12;
+        if(s.find("Jan")!=string::npos)  month=1;
+        if(s.find("Feb")!=string::npos)  month=2;
+        if(s.find("Mar")!=string::npos)  month=3;
+        if(s.find("Apr")!=string::npos)  month=4;
+        if(s.find("May")!=string::npos)  month=5;
+        if(s.find("Jun")!=string::npos)  month=6;
+        if(s.find("Jul")!=string::npos)  month=7;
+        if(s.find("Aug")!=string::npos)  month=8;
+        if(s.find("Sep")!=string::npos)  month=9;
+        if(s.find("Oct")!=string::npos)  month=10;
+        if(s.find("Nov")!=string::npos)  month=11;
+        if(s.find("Dec")!=string::npos)  month=12;
 
-        year = std::stoi(s.substr(s.find_last_of(" ") + 1, 4));
+        year=stoi(s.substr(s.find_last_of(" ")+1, 4));
+
         break;
     }
 }
