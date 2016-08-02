@@ -13,6 +13,7 @@
 //          push a value onto the stack to indicate that a parenthesized
 //          expression was replaced.
 
+//Version1
 #include <iostream>
 #include <stack>
 #include <string>
@@ -29,7 +30,7 @@ int main()
 
     stack<char> stk;
 
-    for(auto c : expr)
+    for(const auto &c : expr)
     {
         stk.push(c);
         if(c=='(')
@@ -53,4 +54,54 @@ int main()
     }
 
     cout<<output<<endl;             //"This is # and # over"
+}
+
+
+//Version2
+#include <iostream>
+#include <stack>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    stack<char> stk;
+    string s;
+    cout<<"Input a expression: ";
+    getline(cin, s);
+
+    //deal the stk
+    string::iterator it=s.begin();
+    while(it!=s.end())
+    {
+        if(*it!=')')
+            stk.push(*it);
+        else
+        {
+            while(!stk.empty()&&stk.top()!='(')
+                    stk.pop();
+
+            if(stk.empty())
+                cout<<"It't not matched."<<endl;
+            else
+            {
+                stk.pop();
+                stk.push('@');
+            }
+        }
+
+        ++it;
+    }
+
+    //show out the elements of the stack
+    cout<<"\nThe elements of the stack are:"<<endl;
+    string output;
+    while(!stk.empty())
+    {
+        output.insert(output.begin(), stk.top());
+        stk.pop();
+    }
+
+    cout<<output<<endl;
 }
