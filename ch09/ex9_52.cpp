@@ -13,37 +13,44 @@
 //          push a value onto the stack to indicate that a parenthesized
 //          expression was replaced.
 
-#include <stack>
-using std::stack;
-
-#include <string>
-using std::string;
-
 #include <iostream>
+#include <stack>
+#include <string>
 using std::cout;
 using std::endl;
+using std::stack;
+using std::string;
 
 int main()
 {
-    auto& expr = "This is (Mooophy(awesome)((((wooooooooo))))) and (ocxs) over";
-    auto repl = '#';
-    auto seen = 0;
+    auto &expr="This is (Mooophy(awesome)((((wooooooooo))))) and (ocxs) over";
+    auto repl='#';
+    auto seen=0;
 
     stack<char> stk;
 
-    for (auto c : expr) {
+    for(auto c : expr)
+    {
         stk.push(c);
-        if (c == '(') ++seen;   // open
-        if (seen && c == ')') { // pop elements down to the stack
-            while (stk.top() != '(') stk.pop();
-            stk.pop();      // including the open parenthesis
-            stk.push(repl); // push a value indicate it was replaced
-            --seen;         // close
+        if(c=='(')
+            ++seen;                 //open
+        if(seen && c==')')         //pop elements down to the stack
+        {
+            while(stk.top()!='(')
+                stk.pop();
+            stk.pop();              //including the open parenthesis
+            stk.push(repl);         //push a value indicate it was replaced
+            --seen;                 //close
         }
     }
 
-    // Test
+    //Test
     string output;
-    for (; !stk.empty(); stk.pop()) output.insert(output.begin(), stk.top());
-    cout << output << endl; // "This is # and # over"
+    while(!stk.empty())
+    {
+        output.insert(output.begin(), stk.top());
+        stk.pop();
+    }
+
+    cout<<output<<endl;             //"This is # and # over"
 }
