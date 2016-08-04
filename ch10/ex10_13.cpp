@@ -12,23 +12,23 @@
 //!
 
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 #include <algorithm>
 
-bool predicate(const std::string& s)
+using namespace std;
+
+bool predicate(const string &s)
 {
-    return s.size() >= 5;
+    return s.size()>=5;
 }
 
 int main()
 {
-    auto v = std::vector<std::string>{"a",         "as",        "aasss",
-                                      "aaaaassaa", "aaaaaabba", "aaa"};
-    auto pivot = std::partition(v.begin(), v.end(), predicate);
+    auto svec=vector<string>{"a", "as", "aasss", "aaaaassaa", "aaaaaabba", "aaa"};
+    auto pivot=partition(svec.begin(), svec.end(), predicate);
 
-    for (auto it = v.cbegin(); it != pivot; ++it) std::cout << *it << " ";
-    std::cout << std::endl;
-
-    return 0;
+    for(auto it=svec.cbegin(); it!=pivot; ++it)
+        cout<<*it<<" ";
+    cout<<endl;
 }
