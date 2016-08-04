@@ -9,35 +9,36 @@
 //!
 
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 #include <algorithm>
 
-// print containers like vector,deque, list, etc.
-template <typename Sequence> auto println(Sequence const& seq) -> std::ostream &
+using namespace std;
+
+//print containers like vector, deque, list, etc.
+template <typename Sequence>
+auto println(const Sequence &seq) -> ostream&
 {
-    for (auto const& elem : seq) std::cout << elem << " ";
-    return std::cout << std::endl;
+    for(const auto &elem : seq)
+        cout<<elem<<" ";
+    return cout<<endl;
 }
 
-auto eliminate_duplicates(std::vector<std::string>& vs)
-    -> std::vector<std::string> &
+auto eliminate_duplicates(vector<string> &svec) -> vector<string>&
 {
-    std::sort(vs.begin(), vs.end());
-    println(vs);
+    sort(svec.begin(), svec.end());
+    println(svec);
 
-    auto new_end = std::unique(vs.begin(), vs.end());
-    println(vs);
+    auto new_end=unique(svec.begin(), svec.end());
+    println(svec);
 
-    vs.erase(new_end, vs.end());
-    return vs;
+    svec.erase(new_end, svec.end());
+    return svec;
 }
 
 int main()
 {
-    std::vector<std::string> vs{"a", "v", "a", "s", "v", "a", "a"};
-    println(vs);
-    println(eliminate_duplicates(vs));
-
-    return 0;
+    vector<string> svec{"a", "v", "a", "s", "v", "a", "a"};
+    println(svec);
+    println(eliminate_duplicates(svec));
 }
