@@ -12,61 +12,57 @@
 //!
 
 #include <iostream>
-#include <string>
 #include <vector>
+#include <string>
 #include <algorithm>
 
+using namespace std;
+
 //! from ex 10.9
-void elimdups(std::vector<std::string>& vs)
+void elimdups(vector<string> &svec)
 {
-    std::sort(vs.begin(), vs.end());
-    auto new_end = std::unique(vs.begin(), vs.end());
-    vs.erase(new_end, vs.end());
+    sort(svec.begin(), svec.end());
+    auto new_end=unique(svec.begin(), svec.end());
+    svec.erase(new_end, svec.end());
 }
 
 //! ex10.18
-void biggies_partition(std::vector<std::string>& vs, std::size_t sz)
+void biggies_partition(vector<string> &words, vector<string>::size_type sz)
 {
-    elimdups(vs);
+    elimdups(words);
 
-    auto pivot = partition(vs.begin(), vs.end(), [sz](const std::string& s) {
-        return s.size() >= sz;
-    });
+    auto pivot=partition(words.begin(), words.end(), [sz](const string &s) {return s.size()>=sz;});
 
-    for (auto it = vs.cbegin(); it != pivot; ++it) std::cout << *it << " ";
+    for_each(words.begin(), pivot, [](const string &s) {cout<<s<<" ";});
 }
 
 //! ex10.19
-void biggies_stable_partition(std::vector<std::string>& vs, std::size_t sz)
+void biggies_stable_partition(vector<string> &words, vector<string>::size_type sz)
 {
-    elimdups(vs);
+    elimdups(words);
 
-    auto pivot =
-        stable_partition(vs.begin(), vs.end(),
-                         [sz](const std::string& s) { return s.size() >= sz; });
+    auto pivot=stable_partition(words.begin(), words.end(), [sz](const string &s) {return s.size()>=sz;});
 
-    for (auto it = vs.cbegin(); it != pivot; ++it) std::cout << *it << " ";
+    for_each(words.begin(), pivot, [](const string &s) {cout<<s<<" ";});
 }
 
 int main()
 {
     //! ex10.18
-    std::vector<std::string> v{"the",  "quick", "red",  "fox", "jumps",
-                               "over", "the",   "slow", "red", "turtle"};
-
-    std::cout << "ex10.18: ";
-    std::vector<std::string> v1(v);
-    biggies_partition(v1, 4);
-    std::cout << std::endl;
+    vector<string> svec{"the", "quick", "red", "fox", "jumps", "over", "the", "slow", "red", "turtle"};
+    
+    cout<<"ex10.18: ";
+    vector<string> svec1(svec);
+    biggies_partition(svec1, 4);
+    cout<<endl;
 
     //! ex10.19
-    std::cout << "ex10.19: ";
-    std::vector<std::string> v2(v);
-    biggies_stable_partition(v2, 4);
-    std::cout << std::endl;
-
-    return 0;
+    cout<<"ex10.19: ";
+    vector<string> svec2(svec);
+    biggies_stable_partition(svec2, 4);
+    cout<<endl;
 }
+
 //! output :
 //!
 // ex10.18: turtle jumps over quick slow
