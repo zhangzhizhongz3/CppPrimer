@@ -13,22 +13,19 @@
 #include <string>
 #include <algorithm>
 #include <functional>
-
-using std::string;
+using namespace std;
 using namespace std::placeholders;
 
-bool isBiggerThan6(const string& s, string::size_type sz)
+bool isSmallerThan6(const string &s, string::size_type sz)
 {
-    return s.size() > sz;
+    return s.size()<=sz;
 }
 
 int main()
 {
-    std::vector<string> authors{"Mooophy", "pezy", "Queequeg90", "shbling",
-                                "evan617"};
-    std::cout << count_if(authors.cbegin(), authors.cend(),
-                          bind(isBiggerThan6, _1, 6));
+    vector<string> v{"zhang", "zhizhong", "shiling", "jiang", "shuyi"};
+    cout<<count_if(v.cbegin(), v.cend(), bind(isSmallerThan6, _1, 6))<<endl;
 }
 
 //  @Out
-//  4
+//  3
