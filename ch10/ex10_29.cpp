@@ -9,21 +9,19 @@
 //  strings.
 
 #include <iostream>
+#include <iterator>
 #include <fstream>
 #include <vector>
 #include <string>
-#include <iterator>
-
-using std::string;
+using namespace std;
 
 int main()
 {
-    std::ifstream ifs("../data/book.txt");
-    std::istream_iterator<string> in(ifs), eof;
-    std::vector<string> vec;
-    std::copy(in, eof, back_inserter(vec));
+    ifstream in("E:\\zzz.txt");
+    istream_iterator<string> in_iter(in), eof;
+    vector<string> svec;
+    copy(in_iter, eof, back_inserter(svec));
 
     // output
-    std::copy(vec.cbegin(), vec.cend(),
-              std::ostream_iterator<string>(std::cout, "\n"));
+    copy(svec.cbegin(), svec.cend(), ostream_iterator<string>(cout, "\n"));
 }
