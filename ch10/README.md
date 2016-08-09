@@ -65,7 +65,7 @@ The additional one is for the function to be bound itself.
 - `back_inserter` uses `push_back`.
 - `front_inserter` uses `push_front`.
 - `insert` uses `insert`
->This function takes a second argument, which must be an iterator into the given container. Elements are inserted ahead of the element denoted by the given iterator.
+>The first argument of this fucntion must be an iterator into the given container. Elements are inserted ahead of the element denoted by the given iterator.
 
 ## [Exercise 10.27](ex10_27.cpp)
 ## [Exercise 10.28](ex10_28.cpp)
