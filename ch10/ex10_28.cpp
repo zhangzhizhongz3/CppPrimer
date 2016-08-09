@@ -10,41 +10,38 @@
 //  Use an inserter, a back_inserter, and a front_inserter, respectivly to add
 //  elements to these containers.
 //  Predict how the output sequence varies by the kind of inserter and verify
-//  your predictions
-//  by running your programs.
+//  your predictions by running your programs.
 
 #include <iostream>
-#include <algorithm>
 #include <vector>
 #include <list>
+#include <algorithm>
+using namespace std;
 
-using std::list;
-using std::copy;
-using std::cout;
-using std::endl;
-
-template <typename Sequence> void print(Sequence const& seq)
+template <typename Sequence>
+void print(const Sequence &seq)
 {
-    for (const auto& i : seq) std::cout << i << " ";
-    std::cout << std::endl;
+    for(const auto &i : seq)
+        cout<<i<<" ";
+    cout<<endl;
 }
 
 int main()
 {
-    std::vector<int> vec{1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> ivec{1, 2, 3, 4, 5, 6, 7, 8, 9};
 
     // uses inserter
-    list<int> lst1;
-    copy(vec.cbegin(), vec.cend(), inserter(lst1, lst1.begin()));
-    print(lst1);
+    list<int> ilst1;
+    copy(ivec.cbegin(), ivec.cend(), inserter(ilst1, ilst1.begin()));
+    print(ilst1);
 
     // uses back_inserter
-    list<int> lit2;
-    copy(vec.cbegin(), vec.cend(), back_inserter(lit2));
-    print(lit2);
+    list<int> ilst2;
+    copy(ivec.cbegin(), ivec.cend(), back_inserter(ilst2));
+    print(ilst2);
 
     // uses front_inserter
-    list<int> lst3;
-    copy(vec.cbegin(), vec.cend(), front_inserter(lst3));
-    print(lst3);
+    list<int> ilst3;
+    copy(ivec.cbegin(), ivec.cend(), front_inserter(ilst3));
+    print(ilst3);
 }
