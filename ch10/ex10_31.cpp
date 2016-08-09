@@ -6,20 +6,19 @@
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  Update the program from the previous exercise so that it prints only the
-//  unique elements.
-//  Your program should use unqiue_copy
+//  unique elements. Your program should use unqiue_copy.
 
 #include <iostream>
+#include <iterator>
 #include <vector>
 #include <algorithm>
-#include <iterator>
+using namespace std;
 
 int main()
 {
-    std::istream_iterator<int> in_iter(std::cin), eof;
-    std::vector<int> vec;
-    while (in_iter != eof) vec.push_back(*in_iter++);
-    std::sort(vec.begin(), vec.end());
-    std::unique_copy(vec.cbegin(), vec.cend(),
-                     std::ostream_iterator<int>(std::cout, " "));
+    istream_iterator<int> in_iter(cin), eof;
+    vector<int> ivec;
+    copy(in_iter, eof, back_inserter(ivec));
+    sort(ivec.begin(), ivec.end());
+    unique_copy(ivec.cbegin(), ivec.cend(), ostream_iterator<int>(cout, " "));
 }
