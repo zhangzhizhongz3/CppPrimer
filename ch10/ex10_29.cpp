@@ -13,6 +13,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -25,3 +26,4 @@ int main()
     // output
     copy(svec.cbegin(), svec.cend(), ostream_iterator<string>(cout, "\n"));
 }
+
