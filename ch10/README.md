@@ -98,7 +98,7 @@ The additional one is for the function to be bound itself.
 - `unique` : Forward iterators.
 
 ## Exercise 10.41:
->Based only on the algorithm and argument names, describe the operation that the each of the following library algorithms performs:
+>Based only on the algorithm and argument names, describe the operation that each of the following library algorithms performs:
 ```cpp
 replace(beg, end, old_val, new_val); // replace the old_elements in the input range as new_elements.
 replace_if(beg, end, pred, new_val); // replace the elements in the input range which pred is true as new_elements.
