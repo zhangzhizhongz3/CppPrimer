@@ -6,13 +6,12 @@
 //!
 
 #include <iostream>
-#include <string>
 #include <list>
+#include <string>
 
-using std::string;
-using std::list;
+using namespace std;
 
-void elimDups(list<string>& words)
+void elimDups(list<string> &words)
 {
     words.sort();
     words.unique();
@@ -20,10 +19,11 @@ void elimDups(list<string>& words)
 
 int main()
 {
-    list<string> l = {"aa", "aa", "aa", "aa", "aasss", "aa"};
-    elimDups(l);
-    for (const auto& e : l) std::cout << e << " ";
-    std::cout << std::endl;
+    list<string> lst{"aa", "aa", "aa", "aa", "aasss", "aa"};
+    elimDups(lst);
+    for(const auto &s:lst)
+        cout<<s<<" ";
+    cout<<endl;
 }
 
 //! output
