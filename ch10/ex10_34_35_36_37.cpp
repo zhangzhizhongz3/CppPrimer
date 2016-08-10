@@ -112,3 +112,26 @@ inline void vec2list_3_7_reverse(const vector<int> &v, list<int> &l)
     //!        [7 6 5 4 3 2)
     //!                   ^ this one is specified but not included.
 }
+
+//! Exercise 10.36
+#include <iostream>
+#include <list>
+#include <iterator>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+    int ia[]={1,2,3,4,0,6};
+    list<int> iLst(ia, ia+6);
+
+    for(list<int>::const_reverse_iterator rit=iLst.crbegin(); rit!=iLst.crend(); ++rit)
+        cout<<*rit<<" ";
+    cout<<endl;
+
+    list<int>::const_reverse_iterator last_0_it=find(iLst.crbegin(), iLst.crend(), 0);
+    if(last_0_it!=iLst.crend())
+        cout<<"Get the last 0, it's value: "<<*last_0_it<<endl;
+    else
+        cout<<"We can't find the last 0."<<endl;
+}
