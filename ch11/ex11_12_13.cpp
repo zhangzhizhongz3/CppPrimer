@@ -13,22 +13,25 @@
 //  Write three versions of that program, creating the pairs in each way.
 //  Explain which form you think is easiest to write and understand, and why.
 
-#include <vector>
-#include <utility>
-#include <string>
 #include <iostream>
+#include <vector>
+#include <string>
+#include <utility>
+using namespace std;
 
 int main()
 {
-    std::vector<std::pair<std::string, int>> vec;
-    std::string str;
+    vector<pair<string, int>> v;
+    string s;
     int i;
-    while (std::cin >> str >> i)
-        vec.push_back(std::pair<std::string, int>(str, i));
-    // vec.push_back(std::make_pair(str, i));
-    // vec.push_back({str, i});
-    // vec.emplace_back(str, i); //!!! easiest way.
+    while(cin>>s>>i)
+    {
+        v.push_back(make_pair(s, i));
+      //v.push_back(pair<string, int>(s, i));
+      //v.push_back({s, i});
+      //v.emplace_back(s, i);   //!!! easiest way
+    }
 
-    for (const auto& p : vec)
-        std::cout << p.first << ":" << p.second << std::endl;
+    for(const auto &e:v)
+        cout<<e.first<<" "<<e.second<<endl;
 }
