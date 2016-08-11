@@ -8,7 +8,7 @@
 //! Could we define a map from vector<int>::iterator
 //! to int? What about from list<int>::iterator to int?
 //! In each case, if not, why not?
-//  vector<int>::iterator to int is ok ,because < is defined
+//  vector<int>::iterator to int is ok ,because < is defined.
 //  list<int>::iterator to int is not ok,as no < is defined.
 
 #include <map>
