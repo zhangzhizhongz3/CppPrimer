@@ -7,17 +7,19 @@
 //
 //  Redefine bookstore without using decltype.
 
-#include "../ch07/ex7_26.h"
 #include <set>
+#include "Sales_data.h"
 
-bool compareIsbn(const Sales_data& lhs, const Sales_data& rhs)
+using namespace std;
+
+bool compareIsbn(const Sales_data &lhs, const Sales_data &rhs)
 {
-    return lhs.isbn() < rhs.isbn();
+    return lhs.isbn()<rhs.isbn();
 }
 
 int main()
 {
-    using compareType = bool (*)(const Sales_data& lhs, const Sales_data& rhs);
-    // typedef bool(*compareType)(const Sales_data &lhs, const Sales_data &rhs);
-    std::multiset<Sales_data, compareType> bookstore(compareIsbn);
+    using compareType= bool (*)(const Sales_data&, const Sales_data&);
+    //typedef bool (*compareType)(const Sales_data&, const Sales_data&);
+    multiset<Sales_data, compareType> bookstore(compareIsbn);
 }
