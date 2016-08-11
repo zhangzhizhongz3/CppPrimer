@@ -1,7 +1,7 @@
 //! @Alan
 //!
 //! Exercise 11.3:
-//! Write your own version of the word-counting program.
+//! Write your own version of the word counting program.
 //!
 //! Exercise 11.4:
 //! Extend your program to ignore case and punctuation.
@@ -12,40 +12,49 @@
 #include <iostream>
 #include <map>
 #include <string>
-#include <algorithm>
+#include <cstddef>
 #include <cctype>
+#include <algorithm>
 
-//! Exercise 11.4
-void word_count_pro(std::map<std::string, int>& m)
-{
-    std::string word;
-    while (std::cin >> word) {
-        for (auto& ch : word) ch = tolower(ch);
-        //! According to the erase-remove idiom.
-        //! For more information about the erase-remove idiom, please refer to
-        //! http://en.wikipedia.org/wiki/Erase-remove_idiom
-        word.erase(std::remove_if(word.begin(), word.end(), ispunct),
-                   word.end());
-        ++m[word];
-    }
-    for (const auto& e : m) std::cout << e.first << " : " << e.second << "\n";
-}
+using namespace std;
 
 //! Exercise 11.3
-void ex11_3()
+void word_count()
 {
-    std::map<std::string, std::size_t> word_count;
-    std::string word;
-    while (std::cin >> word) ++word_count[word];
+    map<string, size_t> word_count;
+    string word;
 
-    for (const auto& elem : word_count)
-        std::cout << elem.first << " : " << elem.second << "\n";
+    cin.clear();
+    while(cin>>word)
+        ++word_count[word];
+
+    for(const auto &elem:word_count)
+        cout<<elem.first<<" : "<<elem.second<<endl;
+}
+
+//! Exercise 11.4
+void word_count_pro(map<string, size_t> &m)
+{
+    string word;
+
+    cin.clear();
+    while(cin>>word)
+    {
+        for(auto &ch:word)
+            ch=tolower(ch);
+        word.erase(remove_if(word.begin(), word.end(), [](const char &ch) {return ispunct(ch);}), word.end());
+
+        ++m[word];
+    }
+
+    for(const auto &e:m)
+        cout<<e.first<<" : "<<e.second<<endl;
 }
 
 int main()
 {
-    std::map<std::string, int> m;
-    word_count_pro(m);
+    word_count();
 
-    return 0;
+    map<string, size_t> m;
+    word_count_pro(m);
 }
