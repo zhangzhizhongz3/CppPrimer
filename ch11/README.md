@@ -24,7 +24,7 @@ A `vector` is a collection of objects, and every object has an **associated inde
 - `set` : the element type is the **key type**.
 - `map` : we should use a key-value pair, such as `{key, value}` to indicate that the items together from one element in the map.
 
-I use `set` when i just need to store the `key`, In other hand, I　would like use `map` when i need to store a key-value pair.
+I use `set` when I just need to store the `key`. In other hand, I would like use `map` when I need to store a key-value pair.
 
 ## Exercise 11.6:
 >Explain the difference between a set and a list. When might you use one or the other?
