@@ -49,9 +49,9 @@ I use `set` when I just need to store the `key`. In other hand, I would like use
 >Using a map iterator write an expression that assigns a value to an element.
 
 ```cpp
-std::map<int, std::string> map;
-map[25] = "Alan";
-std::map<int, std::string>::iterator it = map.begin();
+std::map<int, std::string> imap;
+imap[25] = "Alan";
+std::map<int, std::string>::iterator it = imap.begin();
 it->second = "Wang";
 ```
 
