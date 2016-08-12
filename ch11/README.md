@@ -90,8 +90,8 @@ while (cin >> word)
 >Given a map<string, vector<int>>, write the types used as an argument and as the return value for the version of insert that inserts one element.
 
 ```cpp
-std::pair<std::string, std::vector<int>>    // argument
-std::pair<std::map<std::string, std::vector<int>>::iterator, bool> // return
+pair<string, vector<int>> // argument
+pair<map<string, vector<int>>::iterator, bool> // return
 ```
 
 ## [Exercise 11.23](ex11_23.cpp)
