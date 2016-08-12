@@ -8,25 +8,25 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <cstddef>
+
+using namespace std;
 
 int main()
 {
-    std::map<std::string, size_t> word_count;
+    map<string, size_t> word_count;
 
-    //! the orignal codes:
-    // auto map_it = word_count.cbegin();
+    //! the original codes:
+    // auto map_it = word_count.begin();
 
-    std::map<std::string, size_t>::const_iterator map_it = word_count.cbegin();
-    //! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     //! the type ex11.18 required.
+    map<string, size_t>::iterator map_it = word_count.begin();
 
-    // compare the current iterator to the off-the-end iterator
-    while (map_it != word_count.cend()) {
+    //! compare the current iterator to the off-the-end iterator
+    while (map_it != word_count.end())
+    {
         // dereference the iterator to print the element key--value pairs
-        std::cout << map_it->first << " occurs " << map_it->second << " times"
-                  << std::endl;
+        cout << map_it->first << " occurs " << map_it->second << " times" << endl;
         ++map_it; // increment the iterator to denote the next element
     }
-
-    return 0;
 }
