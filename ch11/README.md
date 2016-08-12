@@ -60,7 +60,7 @@ it->second = "Wang";
 of strings, explain the following calls. Indicate whether each call is legal:
 
 ```cpp
-copy(v.begin(), v.end(), inserter(c, c.end())); // legal
+copy(v.begin(), v.end(), inserter(c, c.end())); // legal.
 copy(v.begin(), v.end(), back_inserter(c)); // illegal, no `push_back` in `set`.
 copy(c.begin(), c.end(), inserter(v, v.end())); // legal.
 copy(c.begin(), c.end(), back_inserter(v)); // legal.
