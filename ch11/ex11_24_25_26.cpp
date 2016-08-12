@@ -22,35 +22,33 @@
 
 #include <iostream>
 #include <map>
-#include <string>
-#include <algorithm>
 #include <vector>
+#include <string>
+
+using namespace std;
 
 int main()
 {
     //! ex11.24
-    std::map<int, int> m;
-    m[0] = 1;
+    map<int, int> m;
+    m[0]=1;
 
-    for (const auto& e : m) std::cout << e.first << " " << e.second << "\n";
+    for(const auto &e:m)
+        cout<<e.first<<" "<<e.second<<endl;
 
     //! ex11.25
-    std::vector<int> v;
-    v[0] = 1;
+    vector<int> v;
+    v[0]=1;
 
-    for (const auto& e : v) std::cout << e << "\n";
+    for(const auto &e:v)
+        cout<<e<<endl;
 
     //! ex11.26
-    std::map<int, std::string> map = {{1, "ss"}, {2, "sz"}};
+    map<int, string> imap={{1, "ss"}, {2, "sz"}};
 
-    std::map<int, std::string>::key_type type_to_subscript = 1;
-    //! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    //! that is, int.
+    map<int, string>::key_type type_to_subscript=1;
+    //! that is, int
 
-    std::map<int, std::string>::mapped_type type_to_return =
-        map[type_to_subscript];
-    //! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    //! that is, std::string
-
-    return 0;
+    map<int, string>::mapped_type type_to_return=imap[type_to_subscript];
+    //! that is, string
 }
