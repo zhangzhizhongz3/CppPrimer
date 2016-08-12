@@ -71,9 +71,9 @@ copy(c.begin(), c.end(), back_inserter(v)); // legal.
 Write the variable’s type without using auto or decltype.
 
 ```cpp
-using compareType = bool (*)(const Sales_data &lhs, const Sales_data &rhs);
-std::multiset<Sales_data, compareType> bookstore(compareIsbn);
-std::multiset<Sales_data, compareType>::iterator c_it = bookstore.begin();
+using compareType = bool (*)(const Sales_data&, const Sales_data&);
+multiset<Sales_data, compareType> bookstore(compareIsbn);
+multiset<Sales_data, compareType>::iterator c_it = bookstore.begin();
 ```
 ## [Exercise 11.20](ex11_20.cpp)
 ## Exercise 11.21:
