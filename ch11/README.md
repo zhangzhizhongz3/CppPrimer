@@ -84,7 +84,7 @@ while (cin >> word)
 ```
 
 ```cpp
-++ (word_count.insert({word, 0}).first->second)
+++ ((word_count.insert({word, 0}).first)->second)
 ```
 ## Exercise 11.22:
 >Given a map<string, vector<int>>, write the types used as an argument and as the return value for the version of insert that inserts one element.
