@@ -104,7 +104,7 @@ pair<map<string, vector<int>>::iterator, bool> // return
 ## Exercise 11.34:
 >What would happen if we used the subscript operator instead of find in the transform function?
 
-Because map's operator is not declared as **const**,but m is declared as a  reference to  map with **const**. If insert new pair,it will cause error.
+Because map's operator is not declared as **const**, but m is declared as a  reference to  map with **const**. If insert new pair, it will cause error.
 
 ## Exercise 11.35:
 >In buildMap, what effect, if any, would there be from rewriting `trans_map[key] = value.substr(1);` as `trans_map.insert({key, value.substr(1)})`?
