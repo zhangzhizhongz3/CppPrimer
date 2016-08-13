@@ -116,8 +116,6 @@ Because map's operator is not declared as **const**, but m is declared as a  ref
 >Our program does no checking on the validity of either input file. In particular, it assumes that the rules in the transformation file are all sensible.
 What would happen if a line in that file has a key, one space, and then the end of the line? Predict the behavior and then check it against your version of the program.
 
-we added a file that name "word_transformation_bad.txt" to folder `data`. the file only has a key, one space.
-
 the program of 11.33 don't influenced by that.
 
 ## Exercise 11.37:
