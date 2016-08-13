@@ -109,8 +109,8 @@ Because map's operator is not declared as **const**, but m is declared as a  ref
 ## Exercise 11.35:
 >In buildMap, what effect, if any, would there be from rewriting `trans_map[key] = value.substr(1);` as `trans_map.insert({key, value.substr(1)})`?
 
-- use subscript operator: if a word does appear multiple times, our loops will put the **last** corresponding phrase into trans_map
-- use `insert`: if a word does appear multiple times, our loops will put the **first** corresponding phrase into trans_map
+- use subscript operator: if a word does appear multiple times, our loop will put the **last** corresponding phrase into trans_map
+- use `insert`: if a word does appear multiple times, our loop will put the **first** corresponding phrase into trans_map
 
 ## Exercise 11.36:
 >Our program does no checking on the validity of either input file. In particular, it assumes that the rules in the transformation file are all sensible.
