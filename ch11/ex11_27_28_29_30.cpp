@@ -3,8 +3,8 @@
 //! Exercise 11.27:
 //! What kinds of problems would you use count to solve?
 //! When might you use find instead?
-//  I would use count to deal with multimap or multi multiset.
-//  As for the associative container that have unique key, I would use find
+//  I would use count to deal with multimap or multiset. As for the
+//  associative container that has unique key, I would use find
 //  instead of count.
 //!
 //! Exercise 11.28:
@@ -26,35 +26,24 @@
 //! Exercise 11.30:
 //! Explain the meaning of the operand pos.first->second used
 //! in the output expression of the final program in this section.
-//!     cout << pos.first->second << endl;
-//              ^^^^^^^^^^^^^^^^^
+//! cout << pos.first->second << endl;
 //  pos                     a pair
-//  pos.first               the iterator refering to the first element with the
-//  matching key
-//  pos.first->second       the value part of the key-value of the first element
-//  with the matching key
+//  pos.first               the iterator referring to the first element with the matching key
+//  pos.first->second       the value part of the key-value of the first element with the matching key
 
 #include <iostream>
 #include <map>
 #include <string>
-#include <algorithm>
 #include <vector>
+#include <algorithm>
+
+using namespace std;
 
 int main()
 {
-    std::map<std::string, std::vector<int>> m;
-    m = {{"Alan",
-          {
-              1, 2, 3, 4, 5,
-          }},
-         {"John", {1, 5, 6, 7, 8}}};
-
+    map<string, vector<int>> m;
+    m={{"Alan", {1,2,3,4}}, {"John", {5,6,7,8}}};
+    
     //! ex11.28
-    std::map<std::string, std::vector<int>>::iterator it;
-    //! ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    //! type used to define this iterator.
-
-    it = m.find("Alan");
-
-    return 0;
+    map<string, vector<int>>::iterator it=m.find("Alan");
 }
