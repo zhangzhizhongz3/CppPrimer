@@ -126,6 +126,6 @@ the program of 11.33 don't influenced by that.
     - useful for applications in which the cost of maintaining the elements in order is prohibitive
 - the advantages of the ordered version:
     - iterators for the ordered containers access elements in order by key
-    - we can directly define an ordered container that uses a our own class types for its key type.
+    - we can directly define an ordered container that uses a our own class types for its key type
 
 ## [Exercise 11.38](ex11_38.cpp)
