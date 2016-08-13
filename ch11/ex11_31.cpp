@@ -19,7 +19,7 @@ using namespace std;
 int main()
 {
     multimap<string, string> authors={{"alan", "DMA"}, {"pezy", "LeetCode"}, {"alan", "CLRS"}, {"wang", "FTP"}, {"pezy", "CP5"}, {"wang", "CPP-Concurrency"}};
-    // want to delete an element that author is Alan, work is CP5
+    // want to delete an element that author is pezy, work is CP5
     string author="pezy";
     string work="CP5";
 
