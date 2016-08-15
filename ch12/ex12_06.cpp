@@ -14,8 +14,9 @@ using namespace std;
 
 vector<int> *dynamic_vector_generator()
 {
-    vector<int> *ptr_v=new vector<int>();
-    return ptr_v;
+    return new vector<int>();
+   //vector<int> *ptr_v=new vector<int>();
+   //return ptr_v;
 }
 
 void dynamic_vector_processor(vector<int> *ptr_v)
@@ -25,7 +26,7 @@ void dynamic_vector_processor(vector<int> *ptr_v)
         ptr_v->push_back(i);
 }
 
-void dynamic_vector_printer(vector<int> *ptr_v)
+void dynamic_vector_printer(const vector<int> *ptr_v)
 {
     for(const auto &e : *ptr_v)
         cout<<e<<" ";
