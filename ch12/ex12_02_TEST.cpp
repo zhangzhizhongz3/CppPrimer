@@ -1,12 +1,14 @@
-#include "ex12_02.h"
 #include <iostream>
+#include "StrBlob.h"
+
+using namespace std;
 
 int main()
 {
     const StrBlob csb{"hello", "world", "pezy"};
     StrBlob sb{"hello", "world", "Mooophy"};
 
-    std::cout << csb.front() << " " << csb.back() << std::endl;
+    cout << csb.front() << " " << csb.back() << endl;
     sb.back() = "pezy";
-    std::cout << sb.front() << " " << sb.back() << std::endl;
+    cout << sb.front() << " " << sb.back() << endl;
 }
