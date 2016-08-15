@@ -13,7 +13,7 @@ StrBlob b1;
 
 b2 is destroyed, but the elements in b2 must not be destroyed.
 
-so b1 and b2 both have 4 elements.
+so b1 has 4 elements.
 
 ## Exercise 12.2
 
