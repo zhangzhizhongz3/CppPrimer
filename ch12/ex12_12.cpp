@@ -18,7 +18,7 @@ void process(shared_ptr<int> ptr)
 int main()
 {
     auto p=new int();
-    auto sp=make_shared<Int>();
+    auto sp=make_shared<int>();
     
     //legal. Just copy sp which is a shared_ptr to process().
     process(sp);
