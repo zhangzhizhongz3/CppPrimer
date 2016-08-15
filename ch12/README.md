@@ -27,12 +27,6 @@ logical reason. The compiler doesn't complain because this doesn't modify
 data (which is a pointer) but rather the thing data points to, which is
 perfectly legal to do with a const pointer. by David Schwartz.
 
------
-
-Discussion over this exercise on [Stack Overflow](http://stackoverflow.com/questions/20725190/operating-on-dynamic-memory-is-it-meaningful-to-overload-a-const-memeber-functi)
-
-Discussion over this exercise more on [douban](http://www.douban.com/group/topic/61573279/)(chinese)
-
 ## Exercise 12.4:
 >In our check function we didn’t check whether i was greater than zero. Why is it okay to omit that check?
 
