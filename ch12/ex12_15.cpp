@@ -9,39 +9,40 @@
 //  end_connection function.
 
 #include <iostream>
-#include <string>
 #include <memory>
+#include <string>
+
+using namespace std;
+
+struct destination {
+    string ip;
+    int port;
+    destination(string ip_, int port_):ip(ip_), port(port_) {}
+};
 
 struct connection {
-    std::string ip;
+    string ip;
     int port;
-    connection(std::string ip_, int port_) : ip(ip_), port(port_) {}
-};
-struct destination {
-    std::string ip;
-    int port;
-    destination(std::string ip_, int port_) : ip(ip_), port(port_) {}
+    connection(string ip_, int port_):ip(ip_), port(port_) {}
 };
 
-connection connect(destination* pDest)
+connection connect(destination *pDest)
 {
-    std::shared_ptr<connection> pConn(new connection(pDest->ip, pDest->port));
-    std::cout << "creating connection(" << pConn.use_count() << ")"
-              << std::endl;
+    shared_ptr<connection> pConn(new connection(pDest->ip, pDest->port));
+    cout<<"creating connection("<<pConn.use_count()<<")"<<endl;
     return *pConn;
 }
 
 void disconnect(connection pConn)
 {
-    std::cout << "connection close(" << pConn.ip << ":" << pConn.port << ")"
-              << std::endl;
+    cout<<"connection close("<<pConn.ip<<":"<<pConn.port<<")"<<endl;
 }
 
-void f(destination& d)
+void f(destination &d)
 {
-    connection conn = connect(&d);
-    std::shared_ptr<connection> p(&conn, [](connection* p) { disconnect(*p); });
-    std::cout << "connecting now(" << p.use_count() << ")" << std::endl;
+    connection conn=connect(&d);
+    shared_ptr<connection> p(&conn, [](connection *pConn) { disconnect(*pConn);});
+    cout<<"connecting now("<<p.use_count()<<")"<<endl;
 }
 
 int main()
