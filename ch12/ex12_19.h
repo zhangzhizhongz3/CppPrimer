@@ -95,8 +95,8 @@ public:
         return *this;
     }
     
-private：
-    shared_ptr<vector<string>> check(size_t, const string &msg) const
+private:
+    shared_ptr<vector<string>> check(size_t i, const string &msg) const
     {
         auto ret=wptr.lock();
         if(!ret)
