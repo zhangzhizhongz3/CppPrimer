@@ -5,110 +5,109 @@
 //  Created by pezy on 12/26/14.
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
-//  Define your own version of StrBlobPtr and
-//  update your StrBlob class with the appropriate friend declaration and begin
-//  and end members.
+//  Define your own version of StrBlobPtr and update your StrBlob 
+//  class with the appropriate friend declaration and begin and end members.
 //
 //  @See    ex12_02.h
 
 #ifndef CP5_ex12_19_h
 #define CP5_ex12_19_h
 
-#include <vector>
 #include <string>
-#include <initializer_list>
-#include <memory>
+#include <vector>
 #include <exception>
+#include <stdexcept>
+#include <memory>
+#include <initializer_list>
 
-using std::vector;
-using std::string;
+using namespace std;
 
 class StrBlobPtr;
 
 class StrBlob {
+friend class StrBlobPtr;
 public:
     using size_type = vector<string>::size_type;
-    friend class StrBlobPtr;
 
+    StrBlob():data(make_shared<vector<string>>()) {}
+    StrBlob(initializer_list<string> il):data(make_shared<vector<string>>(il)) {}
+    
     StrBlobPtr begin();
     StrBlobPtr end();
-
-    StrBlob() : data(std::make_shared<vector<string>>()) {}
-    StrBlob(std::initializer_list<string> il)
-        : data(std::make_shared<vector<string>>(il))
-    {
-    }
-
+    
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
 
-    void push_back(const string& t) { data->push_back(t); }
+    void push_back(const string &t) { data->push_back(t); }
     void pop_back()
     {
         check(0, "pop_back on empty StrBlob");
         data->pop_back();
     }
 
-    std::string& front()
+    string &front()
     {
         check(0, "front on empty StrBlob");
         return data->front();
     }
 
-    std::string& back()
+    string &back()
     {
         check(0, "back on empty StrBlob");
         return data->back();
     }
 
-    const std::string& front() const
+    const string &front() const
     {
         check(0, "front on empty StrBlob");
         return data->front();
     }
-    const std::string& back() const
+    const string &back() const
     {
         check(0, "back on empty StrBlob");
         return data->back();
     }
 
 private:
-    void check(size_type i, const string& msg) const
+    void check(size_type i, const string &msg) const
     {
-        if (i >= data->size()) throw std::out_of_range(msg);
+        if (i >= data->size())
+            throw out_of_range(msg);
     }
 
-private:
-    std::shared_ptr<vector<string>> data;
+    shared_ptr<vector<string>> data;
 };
 
 class StrBlobPtr {
 public:
-    StrBlobPtr() : curr(0) {}
-    StrBlobPtr(StrBlob& a, size_t sz = 0) : wptr(a.data), curr(sz) {}
-    bool operator!=(const StrBlobPtr& p) { return p.curr != curr; }
-    string& deref() const
+    StrBlobPtr():curr(0) {}
+    StrBlobPtr(StrBlob &a, size_t sz=0):wptr(a.data), curr(sz) {}
+    bool operator!=(const StrBlobPtr &p) { return p.curr!=curr; }
+    string &deref() const
     {
-        auto p = check(curr, "dereference past end");
+        auto p=check(curr, "dereference past end");
         return (*p)[curr];
     }
-    StrBlobPtr& incr()
+    StrBlobPtr &incr()
     {
         check(curr, "increment past end of StrBlobPtr");
         ++curr;
         return *this;
     }
-
-private:
-    std::shared_ptr<vector<string>> check(size_t i, const string& msg) const
+    
+private：
+    shared_ptr<vector<string>> check(size_t, const string &msg) const
     {
-        auto ret = wptr.lock();
-        if (!ret) throw std::runtime_error("unbound StrBlobPtr");
-        if (i >= ret->size()) throw std::out_of_range(msg);
+        auto ret=wptr.lock();
+        if(!ret)
+            throw runtime_error("unbound StrBlobPtr");
+        if(i>=ret->size())
+            throw out_of_range(msg);
         return ret;
     }
-    std::weak_ptr<vector<string>> wptr;
-    size_t curr;
+    
+    weak_ptr<vector<string>> wptr;
+    size_t curr; 
 };
 
 #endif
