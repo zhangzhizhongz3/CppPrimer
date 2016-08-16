@@ -8,6 +8,7 @@
 //! Why doesn’t shared_ptr have a release member?
 //! Because other shared_ptr that points the same object can still delete this
 //! object. Thus, it's meaningless to provide this member.
+//!
 
 #include <iostream>
 #include <memory>
