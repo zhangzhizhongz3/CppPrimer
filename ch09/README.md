@@ -1,4 +1,4 @@
-﻿# Chapter 9. Sequential Container
+﻿# Chapter 9. Sequential Containers
 
 ## Exercise 9.1:
 >Which is the most appropriate—a vector, a deque, or a list—for the following program tasks? Explain the rationale for your choice.If there is no reason to prefer one or another container, explain why not.
