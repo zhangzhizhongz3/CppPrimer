@@ -1,6 +1,5 @@
 //
 //  ex12_22.cpp
-//  CP5
 //
 //  Created by pezy on 1/2/15.
 //  Copyright (c) 2015 pezy. All rights reserved.
