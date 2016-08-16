@@ -12,18 +12,20 @@
 
 #include <iostream>
 #include <string>
-#include <string.h>
+#include <cstring>
+
+using namespace std;
 
 int main()
 {
-    // dynamically allocated array of char
-    char* concatenate_string = new char[255]();
-    strcat(concatenate_string, "hello ");
+    //dynamically allocated array of char
+    char *concatenate_string=new char[255]();
+    strcat(concatenate_string, "hello");
     strcat(concatenate_string, "world");
-    std::cout << concatenate_string << std::endl;
-    delete[] concatenate_string;
+    cout<<concatenate_string<<endl;
+    delete [] concatenate_string;
 
-    // std::string
-    std::string str1{"hello "}, str2{"world"};
-    std::cout << str1 + str2 << std::endl;
+    //string
+    string str1{"hello"}, str2{"world"};
+    cout<<str1+str2<<endl;
 }
