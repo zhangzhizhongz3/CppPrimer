@@ -103,7 +103,7 @@ std::string& deref() const
 ```
 Which version do you think is better and why?
 
-the origin version is better. cause it's more **readability** and **easier to debug**.
+the original version is better. cause it's more **readability** and **easier to debug**.
 
 ## Exercise 12.22 [Header](ex12_22.h)|[Implementation](ex12_22.cpp)
 ## [Exercise 12.23](ex12_23.cpp)
