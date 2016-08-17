@@ -11,8 +11,8 @@
 //
 //  @See    ex12_19.h
 
-#ifndef CP5_ex12_12_h
-#define CP5_ex12_12_h
+#ifndef CP5_ex12_22_h
+#define CP5_ex12_22_h
 
 #include <string>
 #include <vector>
