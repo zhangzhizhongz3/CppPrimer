@@ -8,53 +8,48 @@
 //  The TextQuery and QueryResult classes use only capabilities that we have
 //  already covered.
 //  Without looking ahead, write your own versions of these classes.
+//
 
 #ifndef CP5_ex12_27_h
 #define CP5_ex12_27_h
 
-#include <string>
-using std::string;
-
-#include <vector>
-using std::vector;
-
-#include <memory>
-using std::shared_ptr;
-
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <string>
 #include <map>
 #include <set>
+#include <memory>
+
+using namespace std;
 
 class QueryResult;
+
 class TextQuery {
 public:
-    using LineNo = vector<string>::size_type;
-    TextQuery(std::ifstream&);
+    using line_no=vector<string>::size_type;
+
+    TextQuery(ifstream&);
+
     QueryResult query(const string&) const;
 
 private:
-    shared_ptr<vector<string>> input;
-    std::map<string, shared_ptr<std::set<LineNo>>> result;
+    shared_ptr<vector<string>> file;
+    map<string, shared_ptr<set<line_no>>> wm;
 };
 
 class QueryResult {
-public:
-    friend std::ostream& print(std::ostream&, const QueryResult&);
+friend ostream &print(ostream&, const QueryResult&);
 
 public:
-    QueryResult(const string& s, shared_ptr<std::set<TextQuery::LineNo>> set,
-                shared_ptr<vector<string>> v)
-        : word(s), nos(set), input(v)
-    {
-    }
+    QueryResult(string s, shared_ptr<set<TextQuery::line_no>> p, shared_ptr<vector<string>> f):sought(s), lines(p), file(f) {}
 
 private:
-    string word;
-    shared_ptr<std::set<TextQuery::LineNo>> nos;
-    shared_ptr<vector<string>> input;
+    string sought;
+    shared_ptr<set<TextQuery::line_no>> lines;
+    shared_ptr<vector<string>> file;
 };
 
-std::ostream& print(std::ostream&, const QueryResult&);
+ostream &print(ostream&, const QueryResult&);
 
 #endif
