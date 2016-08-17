@@ -3,22 +3,30 @@
 //  Exercise 12.27
 //
 
-#include "ex12_27_30.h"
 #include <iostream>
+#include <fstream>
+#include "ex12_27.h"
 
-void runQueries(std::ifstream& infile)
+using namespace std;
+
+void runQueries(ifstream &infile)
 {
     TextQuery tq(infile);
-    while (true) {
-        std::cout << "enter word to look for, or q to quit: ";
+
+    while(true)
+    {
+        cout<<"enter word to look for, or q to quit: ";
         string s;
-        if (!(std::cin >> s) || s == "q") break;
-        print(std::cout, tq.query(s)) << std::endl;
+
+        if(!(cin>>s)||s=="q")
+            break;
+
+        print(cout, tq.query(s))<<endl;
     }
 }
 
 int main()
 {
-    std::ifstream file("../data/storyDataFile.txt");
+    ifstream file("E:\\zzz.txt");
     runQueries(file);
 }
