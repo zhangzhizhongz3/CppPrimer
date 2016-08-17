@@ -138,7 +138,7 @@ do {
 
 I prefer the `do while`, cause the process according with our logic.
 
-## Exercise 12.30 [Header](ex12_27_30.h)|[Implementation](ex12_27_30.cpp)|[Test](ex12_27_30_TEST.cpp)
+## Exercise 12.30 [Header](ex12_27.h)|[Implementation](ex12_27.cpp)|[Test](ex12_27_TEST.cpp)
 
 ## Exercise 12.31:
 >What difference(s) would it make if we used a vector instead of a set to hold the line numbers? Which approach is better? Why?
