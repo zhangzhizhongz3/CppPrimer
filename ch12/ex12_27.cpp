@@ -14,21 +14,22 @@ using namespace std;
 
 TextQuery::TextQuery(ifstream &is):file(new vector<string>)
 {
-    string text;
-    while(getline(is, text))
+    string line;
+    while(getline(is, line))
     {
-        file->push_back(text);
+        file->push_back(line);
         int n=file->size()-1;
-        istringstream line(text);
-        string word;
-        while(line>>word)
+        istringstream in(line);
+        string text, word;
+        while(in>>text)
         {
             //avoid read a word followed by punctuation(such as: word,)
-            remove_copy_if(word.begin(), word.end(), back_inserter(word), [](const char &ch) {return isalpha(ch);});
+            remove_copy_if(text.begin(), text.end(), back_inserter(word), [](const char &ch) {return ispunct(ch);});
             auto &lines=wm[word];
             if(!lines)
                 lines.reset(new set<line_no>);
             lines->insert(n);
+            word.clear();
         }
     }
 }
