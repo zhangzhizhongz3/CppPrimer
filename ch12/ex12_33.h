@@ -6,55 +6,52 @@
 //  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  In Chapter 15 we’ll extend our query system and will need some additional
-//  members
-//  in the QueryResult class.
-//  Add members named [begin] and [end] that return iterators into the set of
-//  line numbers
-//  returned by a given query, and a member named [get_file] that
-//  returns a shared_ptr to the file in the QueryResult object.
+//  members in the QueryResult class. Add members named [begin] and [end] that
+//  return iterators into the set of line numbers returned by a given query, 
+//  and a member named [get_file] that returns a shared_ptr to the file in the QueryResult object.
+//
 
 #ifndef CP5_ex12_33_h
 #define CP5_ex12_33_h
-
-#include "ex12_22.h"
-using std::shared_ptr;
 
 #include <iostream>
 #include <fstream>
 #include <map>
 #include <set>
+#include <memory>
+#include "ex12_22.h"
+
+using namespace std;
 
 class QueryResult;
+
 class TextQuery {
 public:
-    TextQuery(std::ifstream&);
+    TextQuery(ifstream&);
+
     QueryResult query(const string&) const;
 
 private:
-    shared_ptr<StrBlob> input;
-    std::map<string, shared_ptr<std::set<StrBlob::size_type>>> result;
+    shared_ptr<StrBlob> file;
+    map<string, shared_ptr<set<StrBlob::size_type>>> wm;
 };
 
 class QueryResult {
-public:
-    using ResultIter = std::set<StrBlob::size_type>::iterator;
-    friend std::ostream& print(std::ostream&, const QueryResult&);
+friend ostream &print(ostream&, const QueryResult&);
 
 public:
-    QueryResult(const string& s, shared_ptr<std::set<StrBlob::size_type>> set,
-                shared_ptr<StrBlob> v)
-        : word(s), nos(set), input(v)
-    {
-    }
-    ResultIter begin() const { return nos->begin(); }
-    ResultIter end() const { return nos->end(); }
-    shared_ptr<StrBlob> get_file() const { return input; }
+    using ResultIter=set<StrBlob::size_type>::iterator;
+
+    QueryResult(string s, shared_ptr<set<StrBlob::size_type>> p, shared_ptr<StrBlob> f):sought(s), lines(p), file(f) {}
+
+    ResultIter begin() const {return lines->begin();}
+    ResultIter end() const {return lines->end();}
 private:
-    string word;
-    shared_ptr<std::set<StrBlob::size_type>> nos;
-    shared_ptr<StrBlob> input;
+    string sought;
+    shared_ptr<set<StrBlob::size_type>> lines;
+    shared_ptr<StrBlob> file;
 };
 
-std::ostream& print(std::ostream&, const QueryResult&);
+ostream &print(ostream&, const QueryResult&);
 
 #endif
