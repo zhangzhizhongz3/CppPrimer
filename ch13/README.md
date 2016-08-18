@@ -89,7 +89,7 @@ It is synthesized when the class does not define its own.
 Exercise 13.7:
 --------------
 
-> What happens when we assign one `StrBlob` to another? What about `StrBlobPtrs`?
+> What happens when we assign one `StrBlob` to another? What about `StrBlobPtr`?
 
 In both cases, shallow copy will happen. All pointers point to the same address. The `use_count` changed the same as 13.3.
 
