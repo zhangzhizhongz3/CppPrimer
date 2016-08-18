@@ -9,10 +9,10 @@ A copy constructor is a constructor which first parameter is a **reference** to 
 
 When copy initialization happens and that copy initialization requires either the copy constructor or the move constructor.
 
--	Define variables using an `=`
--	Pass an object as an argument to a parameter of non-reference type
--	Return an object from a function that has a non-reference return type
--	Brace initialize the elements in an array or the members of an aggregate class
+-	Define variables using an `=`.
+-	Pass an object as an argument to a parameter of non-reference type.
+-	Return an object from a function that has a non-reference return type.
+-	Brace initialize the elements in an array or the members of an aggregate class.
 -	Some class types also use copy initialization for the objects they allocate.
 
 Exercise 13.2:
