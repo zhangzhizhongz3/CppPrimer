@@ -33,7 +33,8 @@ Exercise 13.3:
 
 ```cpp
 // added a public member function to StrBlob and StrBlobPrts
-long count() {
+long count() 
+{
     return data.use_count(); // and wptr.use_count();
 }
 
