@@ -3,8 +3,10 @@
 //  Exercise 12.27
 //
 
+#include <iostream>
 #include <fstream>
 #include <sstream>
+#include <string>
 #include <algorithm>
 #include <iterator>
 #include <cctype>
