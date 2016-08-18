@@ -1,6 +1,5 @@
 //
 //  ex13_08.h
-//  CP5
 //
 //  Created by pezy on 1/12/15.
 //  Copyright (c) 2015 pezy. All rights reserved.
@@ -11,30 +10,20 @@
 //  object to which ps points.
 //
 //  See ex13_05.h
-
-#ifndef CP5_ex13_08_h
-#define CP5_ex13_08_h
-
-#include <string>
+//
 
 class HasPtr {
 public:
-    HasPtr(const std::string& s = std::string()) : ps(new std::string(s)), i(0)
+    HasPtr(const string &s = string()) : ps(new string(s)), i(0) {}
+    HasPtr(const HasPtr &hp) : ps(new string(*hp.ps)), i(hp.i) {}
+    HasPtr &operator=(const HasPtr &hp)
     {
-    }
-    HasPtr(const HasPtr& hp) : ps(new std::string(*hp.ps)), i(hp.i) {}
-    HasPtr& operator=(const HasPtr& hp)
-    {
-        std::string* new_ps = new std::string(*hp.ps);
         delete ps;
-        ps = new_ps;
-        i = hp.i;
+        ps=new string(*hp.ps);
+        i=hp.i;
         return *this;
     }
-
 private:
-    std::string* ps;
+    string *ps;
     int i;
 };
-
-#endif
