@@ -32,7 +32,7 @@ Exercise 13.3:
 > What happens when we copy a `StrBlob`? What about `StrBlobPtr`?
 
 ```cpp
-// added a public member function to StrBlob and StrBlobPrts
+// added a public member function to StrBlob and StrBlobPrt
 long count() 
 {
     return data.use_count(); // and wptr.use_count();
