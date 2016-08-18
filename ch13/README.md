@@ -29,7 +29,7 @@ If declaration like that, the call would never succeed to call the copy construc
 Exercise 13.3:
 --------------
 
-> What happens when we copy a `StrBlob`? What about `StrBlobPtrs`?
+> What happens when we copy a `StrBlob`? What about `StrBlobPtr`?
 
 ```cpp
 // added a public member function to StrBlob and StrBlobPrts
