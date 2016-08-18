@@ -46,6 +46,8 @@ public:
 
     ResultIter begin() const {return lines->begin();}
     ResultIter end() const {return lines->end();}
+    shared_ptr<StrBlob> get_file() const {return file;}
+    
 private:
     string sought;
     shared_ptr<set<StrBlob::size_type>> lines;
