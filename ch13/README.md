@@ -194,7 +194,7 @@ Exercise 13.21:
 
 > Do you think the `TextQuery` and `QueryResult` classes need to define their own versions of the copy-control members? If so, why? If not, why not? Implement whichever copy-control operations you think these classes require.
 
-As synthesized version meet all requirements for this case, no custom version control members need to define. Check [#304](https://github.com/Mooophy/Cpp-Primer/issues/304#issuecomment-124081395) for detail.
+As synthesized version meet all requirements for this case, no custom version control members need to define. 
 
 [Exercise 13.22](ex13_22.h)
 ---------------------------
