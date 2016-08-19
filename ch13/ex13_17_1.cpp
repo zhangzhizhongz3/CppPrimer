@@ -2,23 +2,19 @@
 //  ex13_17.cpp
 //  Exercise 13.17
 //
-//  Created by pezy on 1/15/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
-//
-//  Write versions of numbered and f corresponding to the previous three
-//  exercises
-//  and check whether you correctly predicted the output.
-//
 //  For 13.14
+//
 
 #include <iostream>
+
+using namespace std;
 
 class numbered {
 public:
     numbered()
     {
-        static int unique = 10;
-        mysn = unique++;
+        static int unique=10;
+        mysn=unique++;
     }
 
     int mysn;
@@ -26,15 +22,13 @@ public:
 
 void f(numbered s)
 {
-    std::cout << s.mysn << std::endl;
+    cout<<s.mysn<<endl;
 }
 
 int main()
 {
-    numbered a, b = a, c = b;
-    f(a);
-    f(b);
-    f(c);
+    numbered a, b=a, c=b;
+    f(a); f(b); f(c);
 }
 
 // output
