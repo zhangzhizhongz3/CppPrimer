@@ -160,7 +160,7 @@ Exercise 13.15:
 
 > Assume `numbered` has a copy constructor that generates a new serial number. Does that change the output of the calls in the previous exercise? If so, why? What output gets generated?
 
-Yes, the output will be changed. cause we don't use the synthesized copy-control members rather than own defined.The output will be three different numbers.
+Yes, the output will be changed. cause we don't use the synthesized copy control members but use own defined.The output will be three different numbers.
 
 Exercise 13.16:
 ---------------
