@@ -167,7 +167,7 @@ Exercise 13.16:
 
 > What if the parameter in `f` were `const numbered&`? Does that change the output? If so, why? What output gets generated?
 
-Yes, the output will be changed. cause the function `f` haven't any copy operators. Thus, the output are the same when pass the each object to `f`.
+Yes, the output will be changed.
 
 Exercise 13.17
 --------------
