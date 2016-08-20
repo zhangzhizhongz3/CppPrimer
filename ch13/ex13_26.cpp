@@ -2,15 +2,16 @@
 //  ex13_26.cpp
 //  Exercise 13.26
 //
-//  Created by pezy on 1/19/15.
-//  Copyright (c) 2014 pezy. All rights reserved.
-//
-//  Write your own version of the StrBlob class described in the previous
-//  exercise.
-//
 //  @See    ex12_22 and ex13_25
+//
 
-#include "ex13_26.h"
+#include "ex12_26.h"
+
+StrBlob &StrBlob::operator=(const StrBlob &sb)
+{
+    data=make_shared<vector<string>>(*sb.data);
+    return *this;
+}
 
 ConstStrBlobPtr StrBlob::begin() const // should add const
 {
@@ -19,10 +20,4 @@ ConstStrBlobPtr StrBlob::begin() const // should add const
 ConstStrBlobPtr StrBlob::end() const // should add const
 {
     return ConstStrBlobPtr(*this, data->size());
-}
-
-StrBlob& StrBlob::operator=(const StrBlob& sb)
-{
-    data = std::make_shared<vector<string>>(*sb.data);
-    return *this;
 }
