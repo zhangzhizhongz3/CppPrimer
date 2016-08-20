@@ -211,7 +211,7 @@ Exercise 13.24:
 
 > What would happen if the version of `HasPtr` in this section didn’t define a destructor? What if `HasPtr` didn’t define the copy constructor?
 
-If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when copy initialization happened, just points copied, the string witch `ps` points haven't been copied.
+If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when copy initialization happened, just points copied, the string which `ps` points haven't been copied.
 
 Exercise 13.25:
 ---------------
@@ -220,7 +220,7 @@ Exercise 13.25:
 
 Copy constructor and copy-assignment operator should dynamically allocate memory for its own , rather than share the object with the right hand operand.
 
-`StrBlob` is using smart pointers which can be managed with synthesized destructor, If an object of `StrBlob` is out of scope, the destructor for std::shared_ptr will be called automatically to free the memory dynamically allocated when the `use_count` goes to 0.
+`StrBlob` is using smart pointers which can be managed with synthesized destructor, If an object of `StrBlob` is out of scope, the destructor for shared_ptr will be called automatically to free the memory dynamically allocated when the `use_count` goes to 0.
 
 Exercise 13.26 [hpp](ex13_26.h) | [cpp](ex13_26.cpp)
 ----------------------------------------------------
