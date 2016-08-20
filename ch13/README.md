@@ -216,9 +216,9 @@ If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` d
 Exercise 13.25:
 ---------------
 
-> Assume we want to define a version of `StrBlob` that acts like a value. Also assume that we want to continue to use a shared_ptr so that our `StrBlobPtr` class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copy-assignment operators must do. Explain why the class does not need a destructor.
+> Assume we want to define a version of `StrBlob` that acts like a value. Also assume that we want to continue to use a shared_ptr so that our `StrBlobPtr` class can still use a weak_ptr to the vector. Your revised class will need a copy constructor and copy-assignment operator but will not need a destructor. Explain what the copy constructor and copy-assignment operator must do. Explain why the class does not need a destructor.
 
-Copy constructor and copy-assignment operator should dynamically allocate memory for its own , rather than share the object with the right hand operand.
+copy constructor and copy-assignment operator should dynamically allocate memory for its own , rather than share the object with the right hand operand.
 
 `StrBlob` is using smart pointers which can be managed with synthesized destructor, If an object of `StrBlob` is out of scope, the destructor for shared_ptr will be called automatically to free the memory dynamically allocated when the `use_count` goes to 0.
 
