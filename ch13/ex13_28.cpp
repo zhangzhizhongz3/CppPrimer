@@ -2,41 +2,38 @@
 //  ex13_28.cpp
 //  Exercise 13.28
 //
-//  Created by pezy on 1/20/15.
-//  Copyright (c) 2015 pezy. All rights reserved.
-//
-//  Given the following classes, implement a default constructor and the
-//  necessary copy-control members.
 
 #include "ex13_28.h"
 
-TreeNode& TreeNode::operator=(const TreeNode& rhs)
+TreeNode &TreeNode::operator=(const TreeNode &rhs)
 {
     ++*rhs.count;
-    if (--*count == 0) {
-        if (left) {
+    if(--*count==0)
+    {
+        if(left)
+        {
             delete left;
-            left = nullptr;
+            left=nullptr;
         }
-        if (right) {
+        if(right)
+        {
             delete right;
-            right = nullptr;
+            right=nullptr;
         }
-
         delete count;
-        count = nullptr;
+        count=nullptr;
     }
-    value = rhs.value;
-    left = rhs.left;
-    right = rhs.right;
-    count = rhs.count;
+    value=rhs.value;
+    count=rhs.count;
+    left=rhs.left;
+    right=rhs.right;
     return *this;
 }
 
-BinStrTree& BinStrTree::operator=(const BinStrTree& bst)
+BinStrTree &BinStrTree::operator=(const BinStrTree &rhs)
 {
-    TreeNode* new_root = new TreeNode(*bst.root);
+    auto newb=new TreeNode(*rhs.root);
     delete root;
-    root = new_root;
+    root=newb;
     return *this;
 }
