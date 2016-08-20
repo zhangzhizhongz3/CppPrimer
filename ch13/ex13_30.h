@@ -5,7 +5,7 @@
 //  Created by pezy on 1/23/15.
 //  Copyright (c) 2015 pezy. All rights reserved.
 //
-//  Write and test a swap function for your value like version of HasPtr.
+//  Write and test a swap function for your value-like version of HasPtr.
 //  Give your swap a print statement that notes when it is executed.
 //
 //  See ex13_22.h
