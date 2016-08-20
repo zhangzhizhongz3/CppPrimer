@@ -202,7 +202,7 @@ As synthesized version meet all requirements for this case, no custom version co
 Exercise 13.23:
 ---------------
 
-> Compare the copy-control members that you wrote for the solutions to the previous section’s exercises to the code presented here. Be sure you understand the differences, if any, between your code and ours.
+> Compare the copy control members that you wrote for the solutions to the previous section’s exercises to the code presented here. Be sure you understand the differences, if any, between your code and ours.
 
 Check 13.22.
 
