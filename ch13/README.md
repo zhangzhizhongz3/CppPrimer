@@ -211,7 +211,7 @@ Exercise 13.24:
 
 > What would happen if the version of `HasPtr` in this section didn’t define a destructor? What if `HasPtr` didn’t define the copy constructor?
 
-If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when assignment happened, just points copied, the string witch `ps` points haven't been copied.
+If `HasPtr` didn't define a destructor, memory leak will happened. If `HasPtr` didn't define the copy constructor, when copy initialization happened, just points copied, the string witch `ps` points haven't been copied.
 
 Exercise 13.25:
 ---------------
