@@ -6,58 +6,55 @@
 //  Copyright (c) 2015 pezy. All rights reserved.
 //
 //  Given the following classes, implement a default constructor and the
-//  necessary copy-control members.
+//  necessary copy control members.
+//
 
 #ifndef CP5_ex13_28_h
 #define CP5_ex13_28_h
 
 #include <string>
-using std::string;
+using namespace std;
 
 class TreeNode {
 public:
-    TreeNode()
-        : value(string()), count(new int(1)), left(nullptr), right(nullptr)
-    {
-    }
-    TreeNode(const TreeNode& rhs)
-        : value(rhs.value), count(rhs.count), left(rhs.left), right(rhs.right)
-    {
-        ++*count;
-    }
-    TreeNode& operator=(const TreeNode& rhs);
+    TreeNode():value(string()), count(new int(1)), left(nullptr), right(nullptr) {}
+    TreeNode(const TreeNode &p):value(p.value), count(p.count), left(p.left), right(p.right) {++*count;}
+    TreeNode &operator=(const TreeNode&);
     ~TreeNode()
     {
-        if (--*count == 0) {
-            if (left) {
+        if(--*count==0)
+        {
+            if(left)
+            {
                 delete left;
-                left = nullptr;
+                left=nullptr;
             }
-            if (right) {
+            if(right)
+            {
                 delete right;
-                right = nullptr;
+                right=nullptr;
             }
             delete count;
-            count = nullptr;
+            count=nullptr;
         }
     }
-
+    
 private:
-    std::string value;
-    int* count;
-    TreeNode* left;
-    TreeNode* right;
+    string value;
+    int *count;
+    TreeNode *left;
+    TreeNode *right;
 };
 
 class BinStrTree {
 public:
-    BinStrTree() : root(new TreeNode()) {}
-    BinStrTree(const BinStrTree& bst) : root(new TreeNode(*bst.root)) {}
-    BinStrTree& operator=(const BinStrTree& bst);
-    ~BinStrTree() { delete root; }
-
+    BinStrTree():root(new TreeNode()) {}
+    BinStrTree(const BinStrTree &b):root(new TreeNode(*b.root)) {}
+    BinStrTree &operator=(const BinStrTree&);
+    ~BinStrTree() {delete root;}
+    
 private:
-    TreeNode* root;
+    TreeNode *root;
 };
 
 #endif
