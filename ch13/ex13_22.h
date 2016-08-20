@@ -29,8 +29,9 @@ public:
     HasPtr(const HasPtr &hp) : ps(new string(*hp.ps)), i(hp.i) {}
     HasPtr &operator=(const HasPtr &hp)
     {
+        auto newp=new string(*hp.ps);
         delete ps;
-        ps=new string(*hp.ps);
+        ps=newp;
         i=hp.i;
         return *this;
     }
