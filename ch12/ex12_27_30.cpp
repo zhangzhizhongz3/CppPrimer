@@ -1,6 +1,6 @@
 //
-//  ex12_27.cpp
-//  Exercise 12.27
+//  ex12_27_30.cpp
+//  Exercise 12.27 12.30
 //
 
 #include <iostream>
@@ -10,7 +10,7 @@
 #include <algorithm>
 #include <iterator>
 #include <cctype>
-#include "ex12_27.h"
+#include "ex12_27_30.h"
 
 using namespace std;
 
