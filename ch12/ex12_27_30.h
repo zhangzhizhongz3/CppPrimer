@@ -1,6 +1,6 @@
 //
-//  ex12_27.h
-//  Exercise 12.27
+//  ex12_27_30.h
+//  Exercise 12.27 12.30
 //
 //  Created by pezy on 12/31/14.
 //  Copyright (c) 2014 pezy. All rights reserved.
@@ -10,8 +10,8 @@
 //  Without looking ahead, write your own versions of these classes.
 //
 
-#ifndef CP5_ex12_27_h
-#define CP5_ex12_27_h
+#ifndef CP5_ex12_27_30_h
+#define CP5_ex12_27_30_h
 
 #include <iostream>
 #include <fstream>
