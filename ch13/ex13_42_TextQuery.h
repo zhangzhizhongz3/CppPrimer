@@ -1,43 +1,42 @@
-#ifndef CP5_TEXTQUERY_H_
-#define CP5_TEXTQUERY_H_
+#ifndef CP5_ex12_27_30_h
+#define CP5_ex12_27_30_h
 
-#include <string>
-#include <memory>
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <map>
 #include <set>
+#include <cstddef>
+#include <memory>
+#include "ex13_40.h"
 
-#include "ex13_42_StrVec.h"
+using namespace std;
 
 class QueryResult;
+
 class TextQuery {
 public:
-    TextQuery(std::ifstream&);
-    QueryResult query(const std::string&) const;
+    TextQuery(ifstream&);
+
+    QueryResult query(const string&) const;
 
 private:
-    std::shared_ptr<StrVec> input;
-    std::map<std::string, std::shared_ptr<std::set<size_t>>> result;
+    shared_ptr<StrVec> file;
+    map<string, shared_ptr<set<size_t>>> wm;
 };
 
 class QueryResult {
-public:
-    friend std::ostream& print(std::ostream&, const QueryResult&);
+friend ostream &print(ostream&, const QueryResult&);
 
 public:
-    QueryResult(const std::string& s, std::shared_ptr<std::set<size_t>> set,
-                std::shared_ptr<StrVec> v)
-        : word(s), nos(set), input(v)
-    {
-    }
+    QueryResult(string s, shared_ptr<set<size_t>> p, shared_ptr<StrVec> f):sought(s), lines(p), file(f) {}
 
 private:
-    std::string word;
-    std::shared_ptr<std::set<size_t>> nos;
-    std::shared_ptr<StrVec> input;
+    string sought;
+    shared_ptr<set<size_t>> lines;
+    shared_ptr<StrVec> file;
 };
 
-std::ostream& print(std::ostream&, const QueryResult&);
+ostream &print(ostream&, const QueryResult&);
 
 #endif
