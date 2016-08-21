@@ -331,7 +331,7 @@ Exercise 13.43:
 **Rewrite**
 
 ```cpp
-for_each(elements, first_free, [this](string &rhs){ alloc.destroy(&rhs); });
+for_each(elements, first_free, [this](string &e){ alloc.destroy(&e); });
 ```
 
 @Mooophy: The new version is better. Compared to the old one, it doesn't need to worry about the order and decrement.So more straightforward and handy. The only thing to do for using this approach is to add "&" to build the pointers to string pointers.
