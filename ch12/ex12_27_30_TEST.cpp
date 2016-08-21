@@ -1,11 +1,11 @@
 //
-//  ex12_27_TEST.cpp
+//  ex12_27_30_TEST.cpp
 //  Exercise 12.27
 //
 
 #include <iostream>
 #include <fstream>
-#include "ex12_27.h"
+#include "ex12_27_30.h"
 
 using namespace std;
 
