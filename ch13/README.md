@@ -298,17 +298,17 @@ Exercise 13.41:
 
 ```
 |a|b|c|d|f|..............|
-^          ^             ^
+ ^         ^              ^
 elements   first_free    cap
 
 // if use alloc.construct(first_free++, "g");
 |a|b|c|d|f|g|.............|
-^            ^            ^
+ ^           ^             ^
 elements     first_free   cap
 
 // if use alloc.construct(++first_free, "g");
 |a|b|c|d|f|.|g|............|
-^          ^ ^             ^
+ ^         ^ ^              ^
 elements   | first_free    cap
            |
     "unconstructed"
