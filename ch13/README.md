@@ -266,7 +266,7 @@ Exercise 13.34 [hpp](ex13_34_36_37.h) | [cpp](ex13_34_36_37.cpp) | [test](ex13_3
 Exercise 13.35:
 ---------------
 
-> What would happen if `Message` used the synthesized versions of the copy-control members?
+> What would happen if `Message` used the synthesized versions of the copy control members?
 
 some existing `Folders` will out of sync with the `Message` after assignment.
 
