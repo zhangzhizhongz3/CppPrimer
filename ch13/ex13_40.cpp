@@ -77,7 +77,7 @@ void StrVec::alloc_n_move(size_t new_cap)
 
 void StrVec::reallocate()
 {
-    auto newcapacity=size() £¿ 2*size() : 1;
+    auto newcapacity=size() ？ 2*size() : 1;
     alloc_n_move(newcapacity);
 }
 
@@ -93,7 +93,7 @@ void StrVec::resize(size_t count)
     resize(count, string());
 }
 
-void StrVec::resize(size_t, const string &s)
+void StrVec::resize(size_t count, const string &s)
 {
     if(count>size())
     {
