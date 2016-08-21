@@ -319,8 +319,8 @@ Exercise 13.42:
 
 > Test your `StrVec` class by using it in place of the `vector<string>` in your `TextQuery` and `QueryResult` classes (12.3, p. 484).
 
--	StrVec : [hpp](ex13_42_StrVec.h) | [cpp](ex13_42_StrVec.cpp)
--	TextQuery and QueryResult : [hpp](ex13_42_TextQuery.h) | [cpp](ex13_42_TextQuery.cpp)
+-	StrVec : [hpp](StrVec.h) | [cpp](StrVec.cpp)
+-	TextQuery and QueryResult : [hpp](ex12_27_30.h) | [cpp](ex12_27_30.cpp)
 -	Text : [ex13_42.cpp](ex13_42.cpp)
 
 Exercise 13.43:
