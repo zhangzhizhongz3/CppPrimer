@@ -82,7 +82,7 @@ void StrVec::resize(size_t count)
     resize(count, string());
 }
 
-void StrVec::resize(size_t, const string &s)
+void StrVec::resize(size_t count, const string &s)
 {
     if(count>size())
     {
