@@ -1,4 +1,4 @@
-// Unit Test for exercise 13_34_36_37.
+// Unit Test for exercise 13_34_36_37
 
 #include "ex13_34_36_37.h"
 
