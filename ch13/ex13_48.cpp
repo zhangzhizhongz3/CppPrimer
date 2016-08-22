@@ -51,3 +51,28 @@ int main()
         cout << s.c_str() << endl;
     }
 }
+
+copy constructor
+copy constructor
+copy-assignment operator
+copy constructor
+hello
+hello
+temporary
+temporary
+copy constructor
+copy constructor
+copy constructor
+copy constructor
+copy constructor
+copy constructor
+copy constructor
+copy constructor
+
+hello
+hello
+hello
+world
+world
+world
+good job
