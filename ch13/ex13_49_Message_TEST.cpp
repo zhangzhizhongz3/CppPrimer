@@ -1,6 +1,4 @@
-// Unit Test for exercise 13_49_Message.
-
-#include "ex13_49_Message.h"
+#include "Message.h"
 
 int main()
 {
