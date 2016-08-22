@@ -367,7 +367,7 @@ int &&rr2 = i*42; // rvalue reference
 ```
 
 -	`lvalue` : functions that return lvalue references, assignment, subscript, dereference, and prefix increment/decrement operator.
--	`rvalue const` reference : functions that return a non-references, arithmetic, relational bitwise, postfix increment/decrement operators.
+-	`rvalue` : functions that return a non-references, arithmetic, relational, bitwise, postfix increment/decrement operators.
 
 Exercise 13.46:
 ---------------
