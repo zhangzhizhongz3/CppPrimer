@@ -1,17 +1,15 @@
-#include "ex13_44_47.h"
-#include <vector>
 #include <iostream>
-
-// Test reference to http://coolshell.cn/articles/10478.html
+#include <vector>
+#include "ex13_44_47.h"
 
 void foo(String x)
 {
-    std::cout << x.c_str() << std::endl;
+    cout << x.c_str() << endl;
 }
 
-void bar(const String& x)
+void bar(const String &x)
 {
-    std::cout << x.c_str() << std::endl;
+    cout << x.c_str() << endl;
 }
 
 String baz()
@@ -37,7 +35,7 @@ int main()
     bar("temporary");
     String s5 = baz();
 
-    std::vector<String> svec;
+    vector<String> svec;
     svec.reserve(8);
     svec.push_back(s0);
     svec.push_back(s1);
@@ -48,7 +46,8 @@ int main()
     svec.push_back(baz());
     svec.push_back("good job");
 
-    for (const auto& s : svec) {
-        std::cout << s.c_str() << std::endl;
+    for (const auto &s : svec)
+    {
+        cout << s.c_str() << endl;
     }
 }
