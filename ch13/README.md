@@ -414,9 +414,7 @@ String s5 = baz(); // second avoided
 Exercise 13.51:
 ---------------
 
-> Although `unique_ptrs` cannot be copied, in 12.1.5 (p. 471) we wrote a clone function that returned a `unique_ptr` by value. Explain why that function is legal and how it works.
-
-In the second assignment, we assign from the result of a call to `getVec`. That expression is an `rvalue`. In this case, both assignment operators are viable—we can bind the result of `getVec` to either operator’s parameter. Calling the copy-assignment operator requires a conversion to `const`, whereas `StrVec&&` is an exact match. Hence, the second assignment uses the move-assignment operator.
+> Although `unique_ptr` cannot be copied, in 12.1.5 (p. 471) we wrote a clone function that returned a `unique_ptr` by value. Explain why that function is legal and how it works.
 
 ```cpp
 unique_ptr<int> clone(int p) {
