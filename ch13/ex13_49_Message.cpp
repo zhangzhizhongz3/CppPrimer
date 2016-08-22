@@ -1,9 +1,11 @@
-#include "ex13_49_Message.h"
 #include <iostream>
+#include "Message.h"
+using namespace std;
 
-void swap(Message& lhs, Message& rhs)
+void swap(Message &lhs, Message &rhs)
 {
     using std::swap;
+
     lhs.remove_from_Folders();
     rhs.remove_from_Folders();
 
@@ -14,35 +16,19 @@ void swap(Message& lhs, Message& rhs)
     rhs.add_to_Folders(rhs);
 }
 
-// Message Implementation
-
-Message::Message(const Message& m) : contents(m.contents), folders(m.folders)
+//Message Implementation
+Message::Message(const Message &m):contents(m.contents), folders(m.folders)
 {
     add_to_Folders(m);
 }
 
-Message& Message::operator=(const Message& rhs)
+Message &Message::operator=(const Message &rhs)
 {
     remove_from_Folders();
-    contents = rhs.contents;
-    folders = rhs.folders;
+    contents=rhs.contents;
+    folders=rhs.folders;
     add_to_Folders(rhs);
-    return *this;
-}
-
-Message::Message(Message&& m) : contents(std::move(m.contents))
-{
-    move_Folders(&m);
-}
-
-Message& Message::operator=(Message&& rhs)
-{
-    if (this != &rhs) {
-        remove_from_Folders();
-        contents = std::move(rhs.contents);
-        move_Folders(&rhs);
-    }
-    return *this;
+    return *this ;
 }
 
 Message::~Message()
@@ -50,13 +36,13 @@ Message::~Message()
     remove_from_Folders();
 }
 
-void Message::save(Folder& f)
+void Message::save(Folder &f)
 {
     addFldr(&f);
     f.addMsg(this);
 }
 
-void Message::remove(Folder& f)
+void Message::remove(Folder &f)
 {
     remFldr(&f);
     f.remMsg(this);
@@ -64,34 +50,54 @@ void Message::remove(Folder& f)
 
 void Message::print_debug()
 {
-    std::cout << contents << std::endl;
+    cout<<contents<<endl;
 }
 
-void Message::add_to_Folders(const Message& m)
+void Message::add_to_Folders(const Message &m)
 {
-    for (auto f : m.folders) f->addMsg(this);
+    for(auto f:m.folders)
+        f->addMsg(this);
 }
 
 void Message::remove_from_Folders()
 {
-    for (auto f : folders) f->remMsg(this);
+    for(auto f:folders)
+        f->remMsg(this);
 }
 
-void Message::move_Folders(Message* m)
+void Message::move_Folders(Message *m)
 {
-    folders = std::move(m->folders);
-    for (auto f : folders) {
+    folders=std::move(m->folders);
+    for(auto f:folders)
+    {
         f->remMsg(m);
         f->addMsg(this);
     }
     m->folders.clear();
 }
 
-// Folder Implementation
+Message::Message(Message &&m) : contents(std::move(m.contents))
+{
+    move_Folders(&m);
+}
 
-void swap(Folder& lhs, Folder& rhs)
+Message &Message::operator=(Message &&rhs)
+{
+    if(this!=&rhs)
+    {
+        remove_from_Folders();
+        contents=std::move(rhs.contents);
+        move_Folders(&rhs);
+    }
+    return *this;
+}
+
+
+
+void swap(Folder &lhs, Folder &rhs)
 {
     using std::swap;
+
     lhs.remove_from_Messages();
     rhs.remove_from_Messages();
 
@@ -101,31 +107,18 @@ void swap(Folder& lhs, Folder& rhs)
     rhs.add_to_Messages(rhs);
 }
 
-Folder::Folder(const Folder& f) : msgs(f.msgs)
+//Folder Implementation
+Folder::Folder(const Folder &f):msgs(f.msgs)
 {
     add_to_Messages(f);
 }
 
-Folder& Folder::operator=(const Folder& rhs)
+Folder &Folder::operator=(const Folder &rhs)
 {
     remove_from_Messages();
-    msgs = rhs.msgs;
+    msgs=rhs.msgs;
     add_to_Messages(rhs);
-    return *this;
-}
-
-Folder::Folder(Folder&& f)
-{
-    move_Messages(&f);
-}
-
-Folder& Folder::operator=(Folder&& f)
-{
-    if (this != &f) {
-        remove_from_Messages();
-        move_Messages(&f);
-    }
-    return *this;
+    return *this ;
 }
 
 Folder::~Folder()
@@ -135,26 +128,45 @@ Folder::~Folder()
 
 void Folder::print_debug()
 {
-    for (auto m : msgs) std::cout << m->contents << " ";
-    std::cout << std::endl;
+    for(auto m:msgs)
+        cout<<m->contents<<" ";
+    cout<<endl;
 }
 
-void Folder::add_to_Messages(const Folder& f)
+void Folder::add_to_Messages(const Folder &f)
 {
-    for (auto m : f.msgs) m->addFldr(this);
+    for(auto m:f.msgs)
+        m->addFldr(this);
 }
 
 void Folder::remove_from_Messages()
 {
-    for (auto m : msgs) m->remFldr(this);
+    for(auto m:msgs)
+        m->remFldr(this);
 }
 
-void Folder::move_Messages(Folder* f)
+void Folder::move_Messages(Folder *f)
 {
-    msgs = std::move(f->msgs);
-    for (auto m : msgs) {
+    msgs=std::move(f->msgs);
+    for(auto m:msgs)
+    {
         m->remFldr(f);
         m->addFldr(this);
     }
     f->msgs.clear();
+}
+
+Folder::Folder(Folder &&f)
+{
+    move_Messages(&f);
+}
+
+Folder &Folder::operator=(Folder &&rhs)
+{
+    if(this!=&rhs)
+    {
+        remove_from_Messages();
+        move_Messages(&rhs);
+    }
+    return *this;
 }
