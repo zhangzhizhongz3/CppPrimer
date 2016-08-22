@@ -1,37 +1,32 @@
-#ifndef CP5_STRING_H__
-#define CP5_STRING_H__
+#ifndef String_h
+#define String_h
 
 #include <memory>
-
-#ifndef _MSC_VER
-#define NOEXCEPT noexcept
-#else
-#define NOEXCEPT
-#endif
+#include <utility>
+using namespace std;
 
 class String {
 public:
-    String() : String("") {}
+    String():String("") {}
     String(const char*);
     String(const String&);
-    String& operator=(const String&);
-    String(String&&) NOEXCEPT;
-    String& operator=(String&&) NOEXCEPT;
+    String &operator=(const String&);
+    String(String&&) noexcept;
+    String &operator=(String&&) noexcept;
     ~String();
 
-    const char* c_str() const { return elements; }
-    size_t size() const { return end - elements; }
-    size_t length() const { return end - elements - 1; }
+    const char *c_str() const {return elements;}
+    size_t size() const {return end-elements;}
+    size_t length() const {return end-elements-1;}
 
 private:
-    std::pair<char*, char*> alloc_n_copy(const char*, const char*);
-    void range_initializer(const char*, const char*);
+    pair<char*, char*> alloc_n_copy(const char*, const char*);
+    void range_initialize(const char*, const char*);
     void free();
 
-private:
-    char* elements;
-    char* end;
-    std::allocator<char> alloc;
+    char *elements;
+    char *end;
+    allocator<char> alloc;
 };
 
 #endif
