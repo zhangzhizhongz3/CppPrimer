@@ -343,8 +343,6 @@ Exercise 13.44:
 
 [hpp](ex13_44_47.h) | [cpp](ex13_44_47.cpp) | [Test](ex13_48.cpp)
 
-more information to see [A trivial String class that designed for write-on-paper in an interview](https://github.com/chenshuo/recipes/blob/fcf9486f5155117fb8c36b6b0944c5486c71c421/string/StringTrivial.h)
-
 Exercise 13.45:
 ---------------
 
