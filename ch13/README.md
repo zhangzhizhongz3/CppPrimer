@@ -423,7 +423,7 @@ unique_ptr<int> clone(int p) {
 }
 ```
 
-the result of a call to `clone` is an **rvalue**, so it uses the move-assignment operator rather than copy-assignment operator. Thus, it is legal and can pretty work.
+the result of a call to `clone` is an **rvalue**, so it uses the move constructor rather than constructor. Thus, it is legal and can pretty work.
 
 Exercise 13.52:
 ---------------
