@@ -25,9 +25,9 @@ Sales_data& Sales_data::operator+=(const Sales_data& rhs)
 
 std::istream& operator>>(std::istream& is, Sales_data& item)
 {
-    double price = 0;
-    is >> item.bookNo >> item.units_sold >> price;
-    item.revenue = price * item.units_sold;
+    double price=0;
+    is>>item.bookNo>>item.units_sold>>price;
+    item.revenue=price * item.units_sold;
     return is;
 }
 
