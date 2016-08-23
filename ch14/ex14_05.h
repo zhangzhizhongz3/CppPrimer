@@ -1,22 +1,19 @@
-#ifndef BOOK_H
-#define BOOK_H
+#ifndef Book_h
+#define Book_h
 
 #include <iostream>
 #include <string>
 
 class Book {
-    friend std::istream& operator>>(std::istream&, Book&);
-    friend std::ostream& operator<<(std::ostream&, const Book&);
-    friend bool operator==(const Book&, const Book&);
-    friend bool operator!=(const Book&, const Book&);
+friend std::istream& operator>>(std::istream&, Book&);
+friend std::ostream& operator<<(std::ostream&, const Book&);
+friend bool operator==(const Book&, const Book&);
+friend bool operator!=(const Book&, const Book&);
 
 public:
     Book() = default;
-    Book(unsigned no, std::string name, std::string author, std::string pubdate)
-        : no_(no), name_(name), author_(author), pubdate_(pubdate)
-    {
-    }
-    Book(std::istream& in) { in >> *this; }
+    Book(unsigned no, std::string name, std::string author, std::string pubdate) : no_(no), name_(name), author_(author), pubdate_(pubdate) { }
+    Book(std::istream &in) { in >> *this; }
 
 private:
     unsigned no_;
@@ -30,4 +27,4 @@ std::ostream& operator<<(std::ostream&, const Book&);
 bool operator==(const Book&, const Book&);
 bool operator!=(const Book&, const Book&);
 
-#endif // BOOK_H
+#endif
