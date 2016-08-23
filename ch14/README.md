@@ -27,11 +27,6 @@
 
 (a) neither. (b) `string` (c) `vector` (d) `string`
 
------
-
-**Reference**
-- [Why does the following not invoke the overloaded operator== (const String &, const String &)? “cobble” == “stone”](http://stackoverflow.com/questions/2690737/why-does-the-following-not-invoke-the-overloaded-operator-const-string-con)
-
 ## Exercise 14.4:
 >Explain how to decide whether the following should be class members:
 - (a) %
@@ -53,9 +48,9 @@
 
 (e) non-member
 
-(f) symetric , non-member
+(f) symmetric , non-member
 
-(g) symetric , non-member
+(g) symmetric , non-member
 
 (h) = () [] -> must be member
 
