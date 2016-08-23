@@ -1,34 +1,35 @@
-#ifndef CP5_STRING_H__
-#define CP5_STRING_H__
+#ifndef String_h
+#define String_h
 
-#include <memory>
 #include <iostream>
+#include <memory>
+#include <utility>
+using namespace std;
 
 class String {
-    friend std::ostream& operator<<(std::ostream&, const String&);
+friend ostream& operator<<(ostream&, const String&);
 
 public:
-    String() : String("") {}
+    String():String("") {}
     String(const char*);
     String(const String&);
-    String& operator=(const String&);
+    String &operator=(const String&);
     ~String();
 
-    const char* c_str() const { return elements; }
-    size_t size() const { return end - elements; }
-    size_t length() const { return end - elements - 1; }
+    const char* c_str() const {return elements;}
+    size_t size() const {return end-elements;}
+    size_t length() const {return end-elements-1;}
 
 private:
-    std::pair<char*, char*> alloc_n_copy(const char*, const char*);
-    void range_initializer(const char*, const char*);
+    pair<char*, char*> alloc_n_copy(const char*, const char*);
+    void range_initialize(const char*, const char*);
     void free();
 
-private:
-    char* elements;
-    char* end;
-    std::allocator<char> alloc;
+    char *elements;
+    char *end;
+    allocator<char> alloc;
 };
 
-std::ostream& operator<<(std::ostream&, const String&);
+ostream& operator<<(ostream&, const String&);
 
 #endif
