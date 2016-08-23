@@ -16,7 +16,7 @@
 ## Exercise 14.2:
 >Write declarations for the overloaded input, output, addition, and compound-assignment operators for `Sales_data`.
 
-[hpp](ex14_02.h) | [cpp](ex14_02.cpp) | [cpp](ex14_02_TEST.cpp)
+[hpp](ex14_02.h) | [cpp](ex14_02.cpp) | [test](ex14_02_TEST.cpp)
 
 ## Exercise 14.3:
 >Both `string` and `vector` define an overloaded == that can be used to compare objects of those types. Assuming `svec1` and `svec2 `are `vectors` that hold `strings`, identify which version of == is applied in each of the following expressions:
