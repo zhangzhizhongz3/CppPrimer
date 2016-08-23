@@ -21,7 +21,7 @@ int main()
 // call destructor
 // call destructor
 
-// when used two assignment operator.
+// when used two assignment operators
 
 // call constructor
 // call constructor
