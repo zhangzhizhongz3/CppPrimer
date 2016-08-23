@@ -45,7 +45,6 @@ double Sales_data::avg_price() const
     return units_sold ? revenue / units_sold : 0;
 }
 
-// declarations for nonmember parts of the Sales_data interface
 std::istream& operator>>(std::istream&, Sales_data&);
 std::ostream& operator<<(std::ostream&, const Sales_data&);
 Sales_data operator+(const Sales_data&, const Sales_data&);
