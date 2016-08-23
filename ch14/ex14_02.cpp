@@ -33,7 +33,7 @@ std::istream& operator>>(std::istream& is, Sales_data& item)
 
 std::ostream& operator<<(std::ostream& os, const Sales_data& item)
 {
-    os << item.isbn() << " " << item.units_sold << " " << item.revenue;
+    os << item.isbn() << " " << item.units_sold << " " << item.revenue<<" "<<item.avg_price();
     return os;
 }
 
