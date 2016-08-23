@@ -443,9 +443,7 @@ Exercise 13.53:
 
 nothing to say, just see the versus codes:
 
-[hpp](ex13_53.h) | [cpp](ex13_53.cpp) | [Test](ex13_53_TEST.cpp)
-
-see more information at [this question && answer](http://stackoverflow.com/questions/21010371/why-is-it-not-efficient-to-use-a-single-assignment-operator-handling-both-copy-a).
+[hpp](ex13_53.h) | [cpp](ex13_53.cpp) | [test](ex13_53_test.cpp)
 
 Exercise 13.54:
 ---------------
