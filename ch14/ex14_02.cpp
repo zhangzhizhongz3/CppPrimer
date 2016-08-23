@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 pezy. All rights reserved.
 //
 //  @Brief implementation of class Sales_data
-//  @See ex14_02.h
+//  @See ex7_41.cpp
+//
 
 #include "ex14_02.h"
 
 Sales_data::Sales_data(std::istream& is) : Sales_data()
 {
-    is >> *this;
+    is>>*this;
 }
 
 Sales_data& Sales_data::operator+=(const Sales_data& rhs)
@@ -24,25 +25,21 @@ Sales_data& Sales_data::operator+=(const Sales_data& rhs)
 
 std::istream& operator>>(std::istream& is, Sales_data& item)
 {
-    double price = 0.0;
+    double price = 0;
     is >> item.bookNo >> item.units_sold >> price;
-    if (is)
-        item.revenue = price * item.units_sold;
-    else
-        item = Sales_data();
+    item.revenue = price * item.units_sold;
     return is;
 }
 
 std::ostream& operator<<(std::ostream& os, const Sales_data& item)
 {
-    os << item.isbn() << " " << item.units_sold << " " << item.revenue << " "
-       << item.avg_price();
+    os << item.isbn() << " " << item.units_sold << " " << item.revenue;
     return os;
 }
 
 Sales_data operator+(const Sales_data& lhs, const Sales_data& rhs)
 {
     Sales_data sum = lhs;
-    sum += rhs;
+    sum+=rhs;
     return sum;
 }
