@@ -59,7 +59,7 @@
 
 Such as `Book`
 
-[hpp](ex14_05.h) | [cpp](ex14_05.cpp) | [test](ex14_05_TEST.cpp)
+[hpp](ex14_05.h) | [cpp](ex14_05.cpp) | [Test](ex14_05_TEST.cpp)
 
 ## Exercise 14.6:
 >Define an output operator for your `Sales_data` class.
