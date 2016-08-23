@@ -20,7 +20,7 @@ void String::range_initialize(const char *first, const char *last)
 
 String::String(const char *s)
 {
-    char *sl=const_cast<char*>(s);
+    auto sl=s;
     while(*sl)
         ++sl;
     range_initialize(s, ++sl);
