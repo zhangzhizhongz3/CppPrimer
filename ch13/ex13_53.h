@@ -2,21 +2,22 @@
 #define CP5_ex13_53_h
 
 #include <string>
+using namespace std;
 
 class HasPtr {
+friend void swap(HasPtr&, HasPtr&);
 public:
-    friend void swap(HasPtr&, HasPtr&);
-    HasPtr(const std::string& s = std::string());
-    HasPtr(const HasPtr& hp);
-    HasPtr(HasPtr&& p) noexcept;
-    HasPtr& operator=(HasPtr rhs);
-    // HasPtr& operator=(const HasPtr &rhs);
-    // HasPtr& operator=(HasPtr &&rhs) noexcept;
+    HasPtr(const string&);
+    HasPtr(const HasPtr&);
+    HasPtr(HasPtr&&) noexcept;
+    HasPtr &operator=(HasPtr);
+    //HasPtr &operator=(const HasPtr&);
+    //HasPtr &operator=(HasPtr&&) noexcept;
     ~HasPtr();
 
 private:
-    std::string* ps;
+    string *ps;
     int i;
 };
 
-#endif // CP5_ex13_53_h
+#endif
