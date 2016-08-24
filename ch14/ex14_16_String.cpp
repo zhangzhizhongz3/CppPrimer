@@ -121,7 +121,7 @@ void String::resize(size_t count)
     resize(count, ' ');
 }
 
-void String::resize(size_t count, char c)
+void String::resize(size_t count, const char& c)
 {
     if(count>size())
     {
