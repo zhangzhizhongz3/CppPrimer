@@ -104,7 +104,7 @@ istream& operator>>(istream& in, Sales_data& s)
 }
 ```
 
-no input check. nothing happend.
+no input check. nothing happened.
 
 ## Exercise 14.12:
 >Define an input operator for the class you used in exercise 7.40 from 7.5.1 (p. 291). Be sure the operator handles input errors.
