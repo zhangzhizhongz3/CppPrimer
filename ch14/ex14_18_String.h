@@ -35,7 +35,7 @@ public:
     String& operator=(String&&) noexcept;
     ~String();
 
-    void push_back(const char);
+    void push_back(const char&);
 
     char* begin() const {return elements;}
     char* end() const {return last_elem;}
