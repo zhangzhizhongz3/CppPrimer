@@ -8,6 +8,7 @@
 //  @Brief implementation of class Sales_data
 //  @See ex7_41.h
 
+#include <iostream>
 #include "ex7_41.h"
 
 // member functions
