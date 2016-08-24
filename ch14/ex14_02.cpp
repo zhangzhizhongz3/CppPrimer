@@ -9,6 +9,7 @@
 //  @See ex7_41.cpp
 //
 
+#include <iostream>
 #include "ex14_02.h"
 
 Sales_data::Sales_data(std::istream& is) : Sales_data()
