@@ -119,8 +119,6 @@ no others.
 ## Exercise 14.14:
 >Why do you think it is more efficient to define `operator+` to call `operator+=` rather than the other way around?
 
-Discussing on [SO](http://stackoverflow.com/questions/21071167/why-is-it-more-efficient-to-define-operator-to-call-operator-rather-than-the).
-
 ## Exercise 14.15:
 >Should the class you chose for exercise 7.40 from 7.5.1 (p. 291) define any of the arithmetic operators? If so, implement them. If not, explain why not.
 
