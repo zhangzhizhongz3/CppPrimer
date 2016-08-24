@@ -1,18 +1,16 @@
-#include "ex14_18_String.h"
-#include <vector>
 #include <iostream>
-#include <algorithm>
-#include <iterator>
-#include <string>
+#include <vector>
+#include "ex14_18_String.h"
+using namespace std;
 
 void foo(String x)
 {
-    std::cout << x << std::endl;
+    cout << x << endl;
 }
 
 void bar(const String& x)
 {
-    std::cout << x.c_str() << std::endl;
+    cout << x.c_str() << endl;
 }
 
 String baz()
@@ -32,7 +30,8 @@ int main()
     String s4(text);
     s2 = s1;
 
-    if (s2 == s1) std::cout << "s2 == s1" << std::endl;
+    if (s2 == s1)
+        cout << "s2 == s1" << endl;
 
     foo(s1);
     bar(s1);
@@ -40,8 +39,8 @@ int main()
     bar("temporary");
     String s5 = baz();
 
-    std::vector<String> svec;
-    // svec.push_back(s0);
+    vector<String> svec;
+    //svec.push_back(s0);
     svec.push_back(s1);
     svec.push_back(s2);
     svec.push_back(s3);
@@ -49,14 +48,16 @@ int main()
     svec.push_back(baz());
     svec.push_back("good job");
 
-    for (const auto& s : svec) {
-        std::cout << s << std::endl;
+    for (const auto& s : svec)
+    {
+        cout << s << endl;
     }
 
-    std::cout << "Input a string: ";
+    cout << "Input a string: ";
     String s6;
-    std::cin >> s6;
-    std::cout << s6 << std::endl;
+    cin >> s6;
+    cout << s6 << endl;
 
-    if (s6 > s1) std::cout << "s6 > s1" << std::endl;
+    if (s6 > s1)
+        cout << "s6 > s1" << endl;
 }
