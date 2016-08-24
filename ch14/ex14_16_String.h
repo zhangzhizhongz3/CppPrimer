@@ -43,7 +43,7 @@ public:
 
     void reserve(size_t);
     void resize(size_t);
-    void resize(size_t, char);
+    void resize(size_t, const char&);
 
 private:
     pair<char*, char*> alloc_n_copy(const char*, const char*);
