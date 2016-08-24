@@ -101,7 +101,7 @@ String::~String()
 //
 //===========================================================================
 
-void String::push_back(const char c)
+void String::push_back(const char& c)
 {
     chk_n_alloc();
     *last_elem=c;
