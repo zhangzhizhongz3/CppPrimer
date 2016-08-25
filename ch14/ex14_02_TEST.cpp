@@ -1,3 +1,4 @@
+#include <iostream>
 #include "ex14_02.h"
 
 int main()
