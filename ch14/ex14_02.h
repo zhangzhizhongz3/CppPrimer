@@ -15,9 +15,6 @@
 #include <string>
 #include <iostream>
 
-class Sales_data;
-std::istream &operator>>(std::istream&, Sales_data&);
-
 class Sales_data {
 friend std::istream& operator>>(std::istream&, Sales_data&);        //input
 friend std::ostream& operator<<(std::ostream&, const Sales_data&);  //output
