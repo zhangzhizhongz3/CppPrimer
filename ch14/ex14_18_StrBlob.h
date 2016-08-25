@@ -1,39 +1,13 @@
-/*
-=================================================================================
-
-C++ Primer 5th Exercise Answer Source Code
-Copyright (C) 2014-2015 github.com/pezy/Cpp-Primer
-
-StrBlob, StrBlobPtr, ConstStrBlobPtr
-
-If you have questions, try to connect with me: pezy<urbancpz@gmail.com>
-
-=================================================================================
-*/
-
-#ifndef CP5_STRBLOB_H_
-#define CP5_STRBLOB_H_
-
-#include <vector>
-using std::vector;
+#ifndef StrBlob_h
+#define StrBlob_h
 
 #include <string>
-using std::string;
-
-#include <initializer_list>
-using std::initializer_list;
-
-#include <memory>
-using std::make_shared;
-using std::shared_ptr;
-
+#include <vector>
 #include <exception>
-
-#ifndef _MSC_VER
-#define NOEXCEPT noexcept
-#else
-#define NOEXCEPT
-#endif
+#include <stdexcept>
+#include <memory>
+#include <initializer_list>
+using namespace std;
 
 class StrBlobPtr;
 class ConstStrBlobPtr;
@@ -45,27 +19,26 @@ class ConstStrBlobPtr;
 //=================================================================================
 
 class StrBlob {
-    using size_type = vector<string>::size_type;
-    friend class ConstStrBlobPtr;
-    friend class StrBlobPtr;
-    friend bool operator==(const StrBlob&, const StrBlob&);
-    friend bool operator!=(const StrBlob&, const StrBlob&);
-    friend bool operator<(const StrBlob&, const StrBlob&);
-    friend bool operator>(const StrBlob&, const StrBlob&);
-    friend bool operator<=(const StrBlob&, const StrBlob&);
-    friend bool operator>=(const StrBlob&, const StrBlob&);
+friend class StrBlobPtr;
+friend class ConstStrBlobPtr;
+friend bool operator==(const StrBlob&, const StrBlob&);
+friend bool operator!=(const StrBlob&, const StrBlob&);
+friend bool operator<(const StrBlob&, const StrBlob&);
+friend bool operator>(const StrBlob&, const StrBlob&);
+friend bool operator<=(const StrBlob&, const StrBlob&);
+friend bool operator>=(const StrBlob&, const StrBlob&);
 
 public:
-    StrBlob() : data(make_shared<vector<string>>()) {}
-    StrBlob(initializer_list<string> il) : data(make_shared<vector<string>>(il))
-    {
-    }
+    using size_type = vector<string>::size_type;
 
-    StrBlob(const StrBlob& sb) : data(make_shared<vector<string>>(*sb.data)) {}
+    StrBlob():data(make_shared<vector<string>>()) {}
+    StrBlob(initializer_list<string> il):data(make_shared<vector<string>>(il)) {}
+
+    StrBlob(const StrBlob& sb):data(make_shared<vector<string>>(*sb.data)) {}
     StrBlob& operator=(const StrBlob&);
 
-    StrBlob(StrBlob&& rhs) NOEXCEPT : data(std::move(rhs.data)) {}
-    StrBlob& operator=(StrBlob&&) NOEXCEPT;
+    StrBlob(StrBlob&& sb) noexcept : data(std::move(sb.data)) {}
+    StrBlob& operator=(StrBlob&&) noexcept;
 
     StrBlobPtr begin();
     StrBlobPtr end();
@@ -76,7 +49,7 @@ public:
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
 
-    void push_back(const string& t) { data->push_back(t); }
+    void push_back(const string& s) { data->push_back(s); }
     void push_back(string&& s) { data->push_back(std::move(s)); }
 
     void pop_back();
@@ -130,7 +103,8 @@ inline const string& StrBlob::back() const
 
 inline void StrBlob::check(size_type i, const string& msg) const
 {
-    if (i >= data->size()) throw std::out_of_range(msg);
+    if (i >= data->size())
+        throw out_of_range(msg);
 }
 
 //=================================================================================
@@ -140,16 +114,16 @@ inline void StrBlob::check(size_type i, const string& msg) const
 //=================================================================================
 
 class StrBlobPtr {
-    friend bool operator==(const StrBlobPtr&, const StrBlobPtr&);
-    friend bool operator!=(const StrBlobPtr&, const StrBlobPtr&);
-    friend bool operator<(const StrBlobPtr&, const StrBlobPtr&);
-    friend bool operator>(const StrBlobPtr&, const StrBlobPtr&);
-    friend bool operator<=(const StrBlobPtr&, const StrBlobPtr&);
-    friend bool operator>=(const StrBlobPtr&, const StrBlobPtr&);
+friend bool operator==(const StrBlobPtr&, const StrBlobPtr&);
+friend bool operator!=(const StrBlobPtr&, const StrBlobPtr&);
+friend bool operator<(const StrBlobPtr&, const StrBlobPtr&);
+friend bool operator>(const StrBlobPtr&, const StrBlobPtr&);
+friend bool operator<=(const StrBlobPtr&, const StrBlobPtr&);
+friend bool operator>=(const StrBlobPtr&, const StrBlobPtr&);
 
 public:
-    StrBlobPtr() : curr(0) {}
-    StrBlobPtr(StrBlob& s, size_t sz = 0) : wptr(s.data), curr(sz) {}
+    StrBlobPtr():curr(0) {}
+    StrBlobPtr(StrBlob& a, size_t sz=0):wptr(a.data), curr(sz) {}
 
     string& deref() const;
     StrBlobPtr& incr();
@@ -157,7 +131,8 @@ public:
 private:
     shared_ptr<vector<string>> check(size_t, const string&) const;
 
-    std::weak_ptr<vector<string>> wptr;
+
+    weak_ptr<vector<string>> wptr;
     size_t curr;
 };
 
@@ -181,12 +156,13 @@ inline StrBlobPtr& StrBlobPtr::incr()
     return *this;
 }
 
-inline shared_ptr<vector<string>> StrBlobPtr::check(size_t i,
-                                                    const string& msg) const
+inline shared_ptr<vector<string>> StrBlobPtr::check(size_t i, const string& msg) const
 {
     auto ret = wptr.lock();
-    if (!ret) throw std::runtime_error("unbound StrBlobPtr");
-    if (i >= ret->size()) throw std::out_of_range(msg);
+    if (!ret)
+        throw runtime_error("unbound StrBlobPtr");
+    if (i >= ret->size())
+        throw out_of_range(msg);
     return ret;
 }
 
@@ -197,24 +173,24 @@ inline shared_ptr<vector<string>> StrBlobPtr::check(size_t i,
 //=================================================================================
 
 class ConstStrBlobPtr {
-    friend bool operator==(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
-    friend bool operator!=(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
-    friend bool operator<(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
-    friend bool operator>(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
-    friend bool operator<=(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
-    friend bool operator>=(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
+friend bool operator==(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
+friend bool operator!=(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
+friend bool operator<(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
+friend bool operator>(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
+friend bool operator<=(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
+friend bool operator>=(const ConstStrBlobPtr&, const ConstStrBlobPtr&);
 
 public:
-    ConstStrBlobPtr() : curr(0) {}
-    ConstStrBlobPtr(const StrBlob& s, size_t sz = 0) : wptr(s.data), curr(sz) {}
+    ConstStrBlobPtr():curr(0) {}
+    ConstStrBlobPtr(const StrBlob& a, size_t sz=0):wptr(a.data), curr(sz) {}
 
     const string& deref() const;
     ConstStrBlobPtr& incr();
 
 private:
-    std::shared_ptr<vector<string>> check(size_t, const string&) const;
+    shared_ptr<vector<string>> check(size_t, const string&) const;
 
-    std::weak_ptr<vector<string>> wptr;
+    weak_ptr<vector<string>> wptr;
     size_t curr;
 };
 
@@ -238,13 +214,14 @@ inline ConstStrBlobPtr& ConstStrBlobPtr::incr()
     return *this;
 }
 
-inline std::shared_ptr<vector<string>>
-ConstStrBlobPtr::check(size_t i, const string& msg) const
+inline shared_ptr<vector<string>> ConstStrBlobPtr::check(size_t i, const string& msg) const
 {
     auto ret = wptr.lock();
-    if (!ret) throw std::runtime_error("unbound StrBlobPtr");
-    if (i >= ret->size()) throw std::out_of_range(msg);
+    if (!ret)
+        throw runtime_error("unbound StrBlobPtr");
+    if (i >= ret->size())
+        throw out_of_range(msg);
     return ret;
 }
 
-#endif // CP5_STRBLOB_H_
+#endif
