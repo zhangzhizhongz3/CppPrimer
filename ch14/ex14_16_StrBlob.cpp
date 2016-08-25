@@ -1,8 +1,9 @@
+#include <algorithm>
 #include "ex14_16_StrBlob.h"
 
 //==================================================================
 //
-//		operators
+//		StrBlob - operators
 //
 //==================================================================
 
@@ -16,6 +17,12 @@ bool operator!=(const StrBlob& lhs, const StrBlob& rhs)
     return !(lhs == rhs);
 }
 
+//================================================================
+//
+//		StrBlobPtr - operators
+//
+//================================================================
+
 bool operator==(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
 {
     return lhs.curr == rhs.curr;
@@ -25,6 +32,12 @@ bool operator!=(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
 {
     return !(lhs == rhs);
 }
+
+//================================================================
+//
+//		ConstStrBlobPtr - operators
+//
+//================================================================
 
 bool operator==(const ConstStrBlobPtr& lhs, const ConstStrBlobPtr& rhs)
 {
@@ -38,7 +51,7 @@ bool operator!=(const ConstStrBlobPtr& lhs, const ConstStrBlobPtr& rhs)
 
 //==================================================================
 //
-//		copy assignment operator and move assignment operator.
+//		copy assignment operator and move assignment operator
 //
 //==================================================================
 
@@ -48,10 +61,11 @@ StrBlob& StrBlob::operator=(const StrBlob& lhs)
     return *this;
 }
 
-StrBlob& StrBlob::operator=(StrBlob&& rhs) NOEXCEPT
+StrBlob& StrBlob::operator=(StrBlob&& rhs) noexcept
 {
-    if (this != &rhs) {
-        data = std::move(rhs.data);
+    if (this != &rhs)
+    {
+        data = move(rhs.data);
         rhs.data = nullptr;
     }
 
