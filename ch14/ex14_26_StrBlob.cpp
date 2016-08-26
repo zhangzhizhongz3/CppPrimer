@@ -1,5 +1,5 @@
-#include "ex14_26_StrBlob.h"
 #include <algorithm>
+#include "ex14_26_StrBlob.h"
 
 //==================================================================
 //
@@ -19,8 +19,7 @@ bool operator!=(const StrBlob& lhs, const StrBlob& rhs)
 
 bool operator<(const StrBlob& lhs, const StrBlob& rhs)
 {
-    return std::lexicographical_compare(lhs.data->begin(), lhs.data->end(),
-                                        rhs.data->begin(), rhs.data->end());
+    return lexicographical_compare(lhs.data->begin(), lhs.data->end(), rhs.data->begin(), rhs.data->end());
 }
 
 bool operator>(const StrBlob& lhs, const StrBlob& rhs)
@@ -54,24 +53,24 @@ bool operator!=(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
     return !(lhs == rhs);
 }
 
-bool operator<(const StrBlobPtr& x, const StrBlobPtr& y)
+bool operator<(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
 {
-    return x.curr < y.curr;
+    return lhs.curr < rhs.curr;
 }
 
-bool operator>(const StrBlobPtr& x, const StrBlobPtr& y)
+bool operator>(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
 {
-    return x.curr > y.curr;
+    return lhs.curr > rhs.curr;
 }
 
-bool operator<=(const StrBlobPtr& x, const StrBlobPtr& y)
+bool operator<=(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
 {
-    return x.curr <= y.curr;
+    return lhs.curr <= rhs.curr;
 }
 
-bool operator>=(const StrBlobPtr& x, const StrBlobPtr& y)
+bool operator>=(const StrBlobPtr& lhs, const StrBlobPtr& rhs)
 {
-    return x.curr >= y.curr;
+    return lhs.curr >= rhs.curr;
 }
 
 //================================================================
@@ -112,7 +111,7 @@ bool operator>=(const ConstStrBlobPtr& lhs, const ConstStrBlobPtr& rhs)
 
 //==================================================================
 //
-//		copy assignment operator and move assignment operator.
+//		copy assignment operator and move assignment operator
 //
 //==================================================================
 
@@ -122,10 +121,11 @@ StrBlob& StrBlob::operator=(const StrBlob& lhs)
     return *this;
 }
 
-StrBlob& StrBlob::operator=(StrBlob&& rhs) NOEXCEPT
+StrBlob& StrBlob::operator=(StrBlob&& rhs) noexcept
 {
-    if (this != &rhs) {
-        data = std::move(rhs.data);
+    if (this != &rhs)
+    {
+        data = move(rhs.data);
         rhs.data = nullptr;
     }
 
