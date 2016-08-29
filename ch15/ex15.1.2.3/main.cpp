@@ -1,10 +1,3 @@
-/***************************************************************************
- *  @file       main.cpp
- *  @author     Alan.W
- *  @date       21  Jan 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
 //!
 //! Exercise 15.1:
 //! What is a virtual member?
@@ -19,7 +12,7 @@
 //! Exercise 15.3:
 //! Define your own versions of the Quote class and the print_total function.
 //!
-//!
+
 #include <iostream>
 #include <string>
 #include <map>
@@ -46,9 +39,3 @@ double print_total(std::ostream &os, const Quote &item, size_t n)
 
     return ret;
 }
-
-
-
-
-
-
