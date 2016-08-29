@@ -14,28 +14,21 @@
 //!
 
 #include <iostream>
-#include <string>
-#include <map>
-#include <functional>
+#include <cstddef>
+#include "Quote.h"
+using namespace std;
 
-#include"quote.h"
-
-double print_total (std::ostream& os, const Quote& item, size_t n);
+double print_total(ostream& os, const Quote& item, size_t n);
 
 int main()
 {
-
-
     return 0;
 }
 
-
-double print_total(std::ostream &os, const Quote &item, size_t n)
+double print_total(ostream& os, const Quote& item, size_t n)
 {
-    double ret = item.net_price(n);
+    double ret=item.net_price(n);
 
-    os << "ISBN:" << item.isbn()
-       << "# sold: " << n << " total due: " << ret << std::endl;
-
+    os<<"ISBN: "<<item.isbn()<<" # sold: "<<" total due: "<<ret<<endl;
     return ret;
 }
