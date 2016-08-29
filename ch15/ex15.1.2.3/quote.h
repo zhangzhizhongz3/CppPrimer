@@ -1,26 +1,22 @@
-#ifndef QUOTE_H
-#define QUOTE_H
+#ifndef Quote_h
+#define Quote_h
 
 #include <string>
+using namespace std;
 
-class Quote
-{
+class Quote {
 public:
-    Quote() = default;
-    Quote(const std::string &b, double p) :
-        bookNo(b), price(p) { }
+    Quote()=default;
+    Quote(const string& b, double p) : bookNo(b), price(p) {}
 
-    std::string     isbn() const { return bookNo; }
-    virtual double  net_price(std::size_t n) const { return n * price; }
-
-    virtual ~Quote() = default;
+    string isbn() const {return bookNo;}
+    virtual double net_price(size_t n) const {return n*price;}
+    virtual ~Quote()=default;
 
 private:
-    std::string bookNo;
-
+    string bookNo;
 protected:
-    double  price = 0.0;
-
+    double price=0.0;
 };
 
-#endif // QUOTE_H
+#endif // Quote_h
