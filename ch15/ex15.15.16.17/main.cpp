@@ -10,7 +10,7 @@
 //! Try to define an object of type Disc_quote and see what errors you get from
 //! the compiler.
 //  error: cannot declare variable 'd' to be of abstract type 'Disc_quote'
-//!                 ^
+//!                 
 
 #include "Quote.h"
 #include "Disc_quote.h"
