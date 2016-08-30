@@ -1,19 +1,21 @@
-#ifndef DISC_QUOTE_H
-#define DISC_QUOTE_H
+#ifndef Disc_quote_h
+#define Disc_quote_h
 
-#include "quote.h"
-class Disc_quote : public Quote
-{
+#include <string>
+#include <cstddef>
+#include "Quote.h"
+using namespace std;
+
+class Disc_quote : public Quote {
 public:
-    Disc_quote();
-    Disc_quote(const std::string& b, double p, std::size_t q, double d) :
-        Quote(b, p), quantity(q), discount(d)   { }
-
-    virtual double net_price(std::size_t n) const override = 0;
+    Disc_quote()=default;
+    Disc_quote(const string& b, double p, size_t q, double d) : Quote(b, p), quantity(q), discount(d) {}
+    double net_price(size_t) const =0;
+    void debug() const =0;
 
 protected:
-    std::size_t quantity;
-    double      discount;
+    size_t quantity=0;
+    double discount=0.0;
 };
 
-#endif // DISC_QUOTE_H
+#endif // Disc_quote_h
