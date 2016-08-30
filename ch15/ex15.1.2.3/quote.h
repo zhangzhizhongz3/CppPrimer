@@ -2,6 +2,7 @@
 #define Quote_h
 
 #include <string>
+#include <cstddef>
 using namespace std;
 
 class Quote {
