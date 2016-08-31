@@ -1,10 +1,3 @@
-/***************************************************************************
- *  @file       main.cpp
- *  @author     Alan.W
- *  @date       23  Jan 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
 //!
 //! Exercise 15.18:
 //! Given the classes from page 612 and page 613, and assuming each object
@@ -43,7 +36,8 @@
 //  Member functions and friends of classes derived from D may use the
 //  derived-to-base conversion if D inherits from B using either public or
 //  protected. Such code may not use the conversion if D inherits privately
-//  from B.Hence:
+//  from B.
+//  Hence:
 //          Derived_from_Public    --  legal    --right
 //          Derived_from_Private   --  illegal  --right
 //          Derived_from_Protected --  legal    --right
@@ -52,16 +46,7 @@
 //! Write code to test your answers to the previous two exercises.
 //!
 
-#include <iostream>
-#include <string>
-
-#include "quote.h"
-#include "bulk_quote.h"
-#include "limit_quote.h"
-#include "disc_quote.h"
-
-class Base
-{
+class Base {
 public:
     void pub_mem();   // public member
 protected:
@@ -70,29 +55,23 @@ private:
     char priv_mem;    // private member
 };
 
-struct Pub_Derv     : public    Base
-{
+struct Pub_Derv : public Base {
     void memfcn(Base &b) { b = *this; }
 };
-struct Priv_Derv    : private   Base
-{
+struct Priv_Derv : private Base {
     void memfcn(Base &b) { b = *this; }
 };
-struct Prot_Derv    : protected Base
-{
+struct Prot_Derv : protected Base {
     void memfcn(Base &b) { b = *this; }
 };
 
-struct Derived_from_Public      : public Pub_Derv
-{
+struct Derived_from_Public : public Pub_Derv {
     void memfcn(Base &b) { b = *this; }
 };
-struct Derived_from_Private     : public Priv_Derv
-{
+struct Derived_from_Private : public Priv_Derv {
     //void memfcn(Base &b) { b = *this; }
 };
-struct Derived_from_Protected   : public Prot_Derv
-{
+struct Derived_from_Protected : public Prot_Derv {
     void memfcn(Base &b) { b = *this; }
 };
 
@@ -115,7 +94,6 @@ int main()
 
     Derived_from_Protected dd3;
     //p = &dd3;
-
 
     return 0;
 }
