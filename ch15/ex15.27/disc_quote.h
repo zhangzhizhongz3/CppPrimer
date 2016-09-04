@@ -1,79 +1,61 @@
-#ifndef DISC_QUOTE_H
-#define DISC_QUOTE_H
+#ifndef Disc_quote_h
+#define Disc_quote_h
 
-#include "quote.h"
-class Disc_quote : public Quote
-{
-    friend bool operator !=(const Disc_quote& lhs, const Disc_quote& rhs);
+#include <string>
+#include <cstddef>
+#include <utility>
+#include "Quote.h"
+using namespace std;
+
+class Disc_quote : public Quote {
+friend bool operator!=(const Disc_quote&, const Disc_quote&);
 public:
-    Disc_quote() { std::cout << "default constructing Disc_quote\n"; }
-
-    Disc_quote(const std::string& b, double p, std::size_t q, double d) :
-        Quote(b, p), quantity(q), discount(d)
-    {
-        std::cout << "Disc_quote : constructor taking 4 parameters.\n";
-    }
+    Disc_quote() {cout<<"Disc_quote: default constructor"<<endl;}
+    Disc_quote(const string& b, double p, size_t q, double d) : Quote(b, p), quantity(q), discount(d) {cout<<"Disc_quote: constructor taking 4 parameters"<<endl;}
 
     //! copy constructor
-    Disc_quote(const Disc_quote& dq) :
-        Quote(dq), quantity(dq.quantity), discount(dq.discount)
-    {
-        std::cout << "Disc_quote : copy constructor.\n";
-    }
-
+    Disc_quote(const Disc_quote& dq) : Quote(dq), quantity(dq.quantity), discount(dq.discount) {cout<<"Disc_quote: copy constructor"<<endl;}
     //! move constructor
-    Disc_quote(Disc_quote&& dq) noexcept :
-        Quote(std::move(dq)), quantity(std::move(dq.quantity)), discount(std::move(dq.discount))
+    Disc_quote(Disc_quote&& dq) noexcept : Quote(std::move(dq)), quantity(std::move(dq.quantity)), discount(std::move(dq.discount)) {cout<<"Disc_quote: move constructor"<<endl;}
+    //! copy =
+    Disc_quote& operator=(const Disc_quote& rhs)
     {
-        std::cout << "Disc_quote : move constructor.\n";
-    }
 
-    //! copy =()
-    Disc_quote& operator =(const Disc_quote& rhs)
-    {
-        Quote::operator =(rhs);
-        this->quantity = rhs.quantity;
-        this->discount = rhs.discount;
-
-        std::cout << "Disc_quote : copy =()\n";
-
-        return *this;
-    }
-
-    //! move =()
-    Disc_quote& operator =(Disc_quote&& rhs) noexcept
-    {
-        if (*this != rhs)
+        if(*this!=rhs)
         {
-            Quote::operator =(std::move(rhs));
-            this->quantity = std::move(rhs.quantity);
-            this->discount = std::move(rhs.discount);
+            Quote::operator=(rhs);
+            quantity=rhs.quantity;
+            discount=rhs.discount;
         }
-        std::cout << "Disc_quote : move =()\n";
-
+        cout<<"Disc_quote: copy ="<<endl;
+        return *this;
+    }
+    //! move =
+    Disc_quote& operator=(Disc_quote&& rhs) noexcept
+    {
+        Quote::operator=(std::move(rhs));
+        if(*this!=rhs)
+        {
+            quantity=std::move(rhs.quantity);
+            discount=std::move(rhs.discount);
+        }
+        cout<<"Disc_quote: move ="<<endl;
         return *this;
     }
 
-    virtual double net_price(std::size_t n) const override = 0;
+    double net_price(size_t) const =0;
+    void debug() const =0;
 
-    ~Disc_quote()
-    {
-        std::cout << "destructing Dis_quote\n";
-    }
+    ~Disc_quote() {cout<<"Disc_quote: destructor"<<endl;}
 
 protected:
-    std::size_t quantity = 3;
-    double      discount = 0.0;
+    size_t quantity=0;
+    double discount=0.0;
 };
 
-bool inline
-operator !=(const Disc_quote& lhs, const Disc_quote& rhs)
+inline bool operator!=(const Disc_quote& lhs, const Disc_quote& rhs)
 {
-    return Quote(lhs) != Quote(rhs)
-            &&
-            lhs.quantity != rhs.quantity
-            &&
-            lhs.discount != rhs.discount;
+    return Quote(lhs)!=Quote(rhs)||lhs.quantity!=rhs.quantity||lhs.discount!=rhs.discount;
 }
 
-#endif // DISC_QUOTE_H
+#endif // Disc_quote_h
