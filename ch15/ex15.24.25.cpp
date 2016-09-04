@@ -1,10 +1,3 @@
-/***************************************************************************
- *  @file       main.cpp
- *  @author     Alan.W
- *  @date       24  Jan 2014
- *  @remark     This code is for the exercises from C++ Primer 5th Edition
- *  @note
- ***************************************************************************/
 //!
 //! Exercise 15.24:
 //! What kinds of classes need a virtual destructor? What operations must a
@@ -30,19 +23,12 @@
 //  the derived classes can call it when executing its default constructor.
 //!
 
-
-#include <iostream>
-#include <string>
-
 #include "quote.h"
 #include "bulk_quote.h"
 #include "limit_quote.h"
 #include "disc_quote.h"
 
-
 int main()
 {
     //Bulk_quote b;
-
-    return 0;
 }
