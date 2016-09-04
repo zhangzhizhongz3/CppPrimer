@@ -1,73 +1,60 @@
-#ifndef QUOTE_H
-#define QUOTE_H
+#ifndef Quote_h
+#define Quote_h
 
-#include <string>
 #include <iostream>
+#include <string>
+#include <cstddef>
+#include <utility>
+using namespace std;
 
-class Quote
-{
-    friend bool operator !=(const Quote& lhs, const Quote& rhs);
+class Quote {
+friend bool operator!=(const Quote&, const Quote&);
 public:
-    Quote() { std::cout << "default constructing Quote\n"; }
-    Quote(const std::string &b, double p) :
-        bookNo(b), price(p) { std::cout << "Quote : constructor taking 2 parameters\n"; }
+    Quote() {cout<<"Quote: default constructor"<<endl;}
+    Quote(const string& b, double p) : bookNo(b), price(p) {cout<<"Quote: constructor taking 2 parameters"<<endl;}
 
     //! copy constructor
-    Quote(const Quote& q) : bookNo(q.bookNo), price(q.price)
-    { std::cout << "Quote: copy constructing\n"; }
-
+    Quote(const Quote& q) : bookNo(q.bookNo), price(q.price) {cout<<"Quote: copy constructor"<<endl;}
     //! move constructor
-    Quote(Quote&& q) noexcept : bookNo(std::move(q.bookNo)), price(std::move(q.price))
-    { std::cout << "Quote: move constructing\n"; }
-
+    Quote(Quote&& q) noexcept : bookNo(std::move(q.bookNo)), price(std::move(q.price)) {cout<<"Quote: move constructor"<<endl;}
     //! copy =
-    Quote& operator =(const Quote& rhs)
+    Quote& operator=(const Quote& rhs)
     {
-        if(*this != rhs)
+        if(*this!=rhs)
         {
-            bookNo = rhs.bookNo;
-            price  = rhs.price;
+            bookNo=rhs.bookNo;
+            price=rhs.price;
         }
-        std::cout << "Quote: copy =() \n";
-
+        cout<<"Quote: copy ="<<endl;
         return *this;
     }
-
     //! move =
-    Quote& operator =(Quote&& rhs)  noexcept
+    Quote& operator=(Quote&& rhs) noexcept
     {
-        if(*this != rhs)
+        if(*this!=rhs)
         {
-            bookNo = std::move(rhs.bookNo);
-            price  = std::move(rhs.price);
+            bookNo=std::move(rhs.bookNo);
+            price=std::move(rhs.price);
         }
-        std::cout << "Quote: move =!!!!!!!!! \n";
-
+        cout<<"Quote: move ="<<endl;
         return *this;
     }
 
-    std::string     isbn() const { return bookNo; }
-    virtual double  net_price(std::size_t n) const { return n * price; }
-    virtual void    debug() const;
+    string isbn() const {return bookNo;}
+    virtual double net_price(size_t n) const {return n*price;}
+    virtual void debug() const;
 
-    virtual ~Quote()
-    {
-        std::cout << "destructing Quote\n";
-    }
+    virtual ~Quote() {cout<<"Quote: destructor"<<endl;}
 
 private:
-    std::string bookNo;
-
+    string bookNo;
 protected:
-    double  price = 10.0;
+    double price=0.0;
 };
 
-bool inline
-operator !=(const Quote& lhs, const Quote& rhs)
+inline bool operator!=(const Quote& lhs, const Quote& rhs)
 {
-    return lhs.bookNo != rhs.bookNo
-           &&
-           lhs.price  != rhs.price;
+    return lhs.bookNo!=rhs.bookNo||lhs.price!=rhs.price;
 }
 
-#endif // QUOTE_H
+#endif // Quote_h
