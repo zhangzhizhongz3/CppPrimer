@@ -1,73 +1,48 @@
-#ifndef QUOTE_H
-#define QUOTE_H
+#ifndef Bulk_quote_h
+#define Bulk_quote_h
 
 #include <string>
-#include <iostream>
+#include <cstddef>
+#include <utility>
+#include "Disc_quote.h"
+using namespace std;
 
-class Quote
-{
-    friend bool operator !=(const Quote& lhs, const Quote& rhs);
+class Bulk_quote : public Disc_quote {
+friend bool operator!=(const Bulk_quote&, const Bulk_quote&);
 public:
-    Quote() { std::cout << "default constructing Quote\n"; }
-    Quote(const std::string &b, double p) :
-        bookNo(b), price(p) { std::cout << "Quote : constructor taking 2 parameters\n"; }
+    Bulk_quote() {};
+    //Bulk_quote(const string& b, double p, size_t q, double d) : Disc_quote(b, p, q, d) {cout<<"Bulk_quote: constructor taking 4 parameters"<<endl;}
+
+    using Disc_quote::Disc_quote;
 
     //! copy constructor
-    Quote(const Quote& q) : bookNo(q.bookNo), price(q.price)
-    { std::cout << "Quote: copy constructing\n"; }
-
+    Bulk_quote(const Bulk_quote& bq) : Disc_quote(bq) {}
     //! move constructor
-    Quote(Quote&& q) noexcept : bookNo(std::move(q.bookNo)), price(std::move(q.price))
-    { std::cout << "Quote: move constructing\n"; }
-
+    Bulk_quote(Bulk_quote&& bq) noexcept : Disc_quote(std::move(bq)) {}
     //! copy =
-    Quote& operator =(const Quote& rhs)
+    Bulk_quote& operator=(const Bulk_quote& rhs)
     {
-        if(*this != rhs)
-        {
-            bookNo = rhs.bookNo;
-            price  = rhs.price;
-        }
-        std::cout << "Quote: copy =() \n";
+        Disc_quote::operator=(rhs);
 
         return *this;
     }
-
     //! move =
-    Quote& operator =(Quote&& rhs)  noexcept
+    Bulk_quote& operator=(Bulk_quote&& rhs) noexcept
     {
-        if(*this != rhs)
-        {
-            bookNo = std::move(rhs.bookNo);
-            price  = std::move(rhs.price);
-        }
-        std::cout << "Quote: move =!!!!!!!!! \n";
+        Disc_quote::operator=(std::move(rhs));
 
         return *this;
     }
 
-    std::string     isbn() const { return bookNo; }
-    virtual double  net_price(std::size_t n) const { return n * price; }
-    virtual void    debug() const;
+    double net_price(size_t) const override;
+    void debug() const override;
 
-    virtual ~Quote()
-    {
-        std::cout << "destructing Quote\n";
-    }
-
-private:
-    std::string bookNo;
-
-protected:
-    double  price = 10.0;
+    virtual ~Bulk_quote() {}
 };
 
-bool inline
-operator !=(const Quote& lhs, const Quote& rhs)
+inline bool operator!=(const Bulk_quote& lhs, const Bulk_quote& rhs)
 {
-    return lhs.bookNo != rhs.bookNo
-           &&
-           lhs.price  != rhs.price;
+    return Quote(lhs)!=Quote(rhs)||lhs.quantity!=rhs.quantity||lhs.discount!=rhs.discount;
 }
 
-#endif // QUOTE_H
+#endif // Bulk_quote_h
