@@ -9,7 +9,7 @@
 //! Exercise 15.25:
 //! Why did we define a default constructor for Disc_quote? What effect, if
 //! any, would removing that constructor have on the behavior of Bulk_quote?
-//  Without it, when building the statement below, the compiler would conplain
+//  Without it, when building the statement below, the compiler would complain
 //  that:
 //  note: 'Bulk_quote::Bulk_quote()' is implicitly deleted because the default
 //  definition would be ill-formed.
