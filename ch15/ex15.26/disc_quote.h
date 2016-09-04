@@ -21,8 +21,11 @@ public:
     Disc_quote& operator=(const Disc_quote& rhs)
     {
         Quote::operator=(rhs);
-        quantity=rhs.quantity;
-        discount=rhs.discount;
+        if(*this!=rhs)
+        {
+            quantity=rhs.quantity;
+            discount=rhs.discount;
+        }
         cout<<"Disc_quote: copy ="<<endl;
         return *this;
     }
@@ -30,8 +33,11 @@ public:
     Disc_quote& operator=(Disc_quote&& rhs) noexcept
     {
         Quote::operator=(std::move(rhs));
-        quantity=std::move(rhs.quantity);
-        discount=std::move(rhs.discount);
+        if(*this!=rhs)
+        {
+            quantity=std::move(rhs.quantity);
+            discount=std::move(rhs.discount);
+        }
         cout<<"Disc_quote: move ="<<endl;
         return *this;
     }
