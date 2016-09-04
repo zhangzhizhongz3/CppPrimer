@@ -20,10 +20,10 @@
 //  the derived classes can call it when executing its default constructor.
 //!
 
-#include "quote.h"
-#include "bulk_quote.h"
-#include "limit_quote.h"
-#include "disc_quote.h"
+#include "Quote.h"
+#include "Disc_quote.h"
+#include "Bulk_quote.h"
+#include "Limit_quote.h"
 
 int main()
 {
