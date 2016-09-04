@@ -11,7 +11,7 @@ class Bulk_quote : public Disc_quote {
 friend bool operator!=(const Bulk_quote&, const Bulk_quote&);
 public:
     Bulk_quote() {};
-    //Bulk_quote(const string& b, double p, size_t q, double d) : Disc_quote(b, p, q, d) {cout<<"Bulk_quote: constructor taking 4 parameters"<<endl;}
+    //Bulk_quote(const string& b, double p, size_t q, double d) : Disc_quote(b, p, q, d) {}
 
     using Disc_quote::Disc_quote;
 
