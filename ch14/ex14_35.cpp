@@ -1,22 +1,22 @@
 #include <iostream>
 #include <string>
+using namespace std;
 
-class GetInput {
+class GetString {
 public:
-    GetInput(std::istream& i = std::cin) : is(i) {}
-    std::string operator()() const
+    GetString(istream &i=cin) : is(i) {}
+    string operator()() const
     {
-        std::string str;
-        std::getline(is, str);
-        return is ? str : std::string();
+        string str;
+        getline(is, str);
+        return is ? str : string();
     }
-
 private:
-    std::istream& is;
+    istream &is;
 };
 
 int main()
 {
-    GetInput getInput;
-    std::cout << getInput() << std::endl;
+    GetString getstring;
+    cout<<getstring()<<endl;
 }
