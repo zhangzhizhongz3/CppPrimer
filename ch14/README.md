@@ -283,7 +283,7 @@ see [Exercise 14.38](#exercise-1438)
 ## Exercise 14.41:
 > Why do you suppose the new standard added lambdas? Explain when you would use a lambda and when you would write a class instead.
 
-IMO, lambda is quite handy to use. Lambda can be used when the functor is not used frequently nor complicated, whereas functor is supposed to call more times than lambda or quite complicated to implement as a lambda.
+lambda is quite handy to use. lambda can be used when the functor is not used frequently nor complicated, whereas functor is supposed to call more times than lambda or quite complicated to implement as a lambda.
 
 ## Exercise 14.42:
 > Using library function objects and adaptors, define an expression to
